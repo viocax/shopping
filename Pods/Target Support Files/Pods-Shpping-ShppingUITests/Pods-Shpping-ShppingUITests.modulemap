@@ -1,0 +1,6 @@
+framework module Pods_Shpping_ShppingUITests {
+  umbrella header "Pods-Shpping-ShppingUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

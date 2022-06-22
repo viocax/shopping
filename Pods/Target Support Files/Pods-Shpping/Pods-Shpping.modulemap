@@ -1,0 +1,6 @@
+framework module Pods_Shpping {
+  umbrella header "Pods-Shpping-umbrella.h"
+
+  export *
+  module * { export * }
+}
