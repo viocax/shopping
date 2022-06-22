@@ -24,6 +24,8 @@
 		0D476F122862C20200262974 /* extension+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F112862C20200262974 /* extension+UITableView.swift */; };
 		0D476F152862C2B700262974 /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F142862C2B700262974 /* ProductListCell.swift */; };
 		0D476F172862FCB700262974 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F162862FCB700262974 /* ProductDetailViewController.swift */; };
+		0D476F1928630E0600262974 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F1828630E0600262974 /* ChartViewController.swift */; };
+		0D476F1C2863168800262974 /* ChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F1B2863168800262974 /* ChartTableViewCell.swift */; };
 		68B572AEF91307FFA123DE00 /* Pods_Shpping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C483E819FEE5EB16195050EA /* Pods_Shpping.framework */; };
 		D8DA05E9AFDB432E9C010AE4 /* Pods_ShppingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0801337710867C1E6115717B /* Pods_ShppingTests.framework */; };
 		EB96052ACF78F8E6579EF70F /* Pods_Shpping_ShppingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E095D61A9CB735DA13534A /* Pods_Shpping_ShppingUITests.framework */; };
@@ -69,6 +71,8 @@
 		0D476F112862C20200262974 /* extension+UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+UITableView.swift"; sourceTree = "<group>"; };
 		0D476F142862C2B700262974 /* ProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
 		0D476F162862FCB700262974 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		0D476F1828630E0600262974 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		0D476F1B2863168800262974 /* ChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTableViewCell.swift; sourceTree = "<group>"; };
 		167C8FD660DEC57BD2A9E826 /* Pods-Shpping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping.debug.xcconfig"; path = "Target Support Files/Pods-Shpping/Pods-Shpping.debug.xcconfig"; sourceTree = "<group>"; };
 		58F3595715F69147EB36DA8D /* Pods-Shpping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping.release.xcconfig"; path = "Target Support Files/Pods-Shpping/Pods-Shpping.release.xcconfig"; sourceTree = "<group>"; };
 		72D47CD5EB359D92B8192C62 /* Pods-ShppingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShppingTests.debug.xcconfig"; path = "Target Support Files/Pods-ShppingTests/Pods-ShppingTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -195,6 +199,8 @@
 		0D476EF32862B6DB00262974 /* Chart */ = {
 			isa = PBXGroup;
 			children = (
+				0D476F1A2863163800262974 /* Component */,
+				0D476F1828630E0600262974 /* ChartViewController.swift */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -278,6 +284,14 @@
 				0D476F142862C2B700262974 /* ProductListCell.swift */,
 			);
 			path = Componet;
+			sourceTree = "<group>";
+		};
+		0D476F1A2863163800262974 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				0D476F1B2863168800262974 /* ChartTableViewCell.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		E6B0CD90B2553C5CCA589698 /* Pods */ = {
@@ -559,6 +573,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D476F1C2863168800262974 /* ChartTableViewCell.swift in Sources */,
 				0D476EC1286222E600262974 /* ViewController.swift in Sources */,
 				0D476EBD286222E600262974 /* AppDelegate.swift in Sources */,
 				0D476F102862C14800262974 /* ProductListViewController.swift in Sources */,
@@ -569,6 +584,7 @@
 				0D476F172862FCB700262974 /* ProductDetailViewController.swift in Sources */,
 				0D476EBF286222E600262974 /* SceneDelegate.swift in Sources */,
 				0D476F122862C20200262974 /* extension+UITableView.swift in Sources */,
+				0D476F1928630E0600262974 /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
