@@ -40,7 +40,7 @@ private extension ProductListCell {
         borderView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(16)
         }
-        borderView.backgroundColor = UIColor.gray.withAlphaComponent(0.2)
+        borderView.backgroundColor = .gray.withAlphaComponent(0.2)
         borderView.layer.cornerRadius = 10
         borderView.addSubview(pictureImageView)
         pictureImageView.contentMode = .scaleAspectFill
