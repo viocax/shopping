@@ -15,6 +15,14 @@
 		0D476ED4286222E700262974 /* ShppingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476ED3286222E700262974 /* ShppingTests.swift */; };
 		0D476EDE286222E700262974 /* ShppingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476EDD286222E700262974 /* ShppingUITests.swift */; };
 		0D476EE0286222E700262974 /* ShppingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476EDF286222E700262974 /* ShppingUITestsLaunchTests.swift */; };
+		0D476EFD2862B99700262974 /* ShopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476EFA2862B99700262974 /* ShopItem.swift */; };
+		0D476EFE2862B99700262974 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476EFB2862B99700262974 /* Order.swift */; };
+		0D476EFF2862B99700262974 /* ErrorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476EFC2862B99700262974 /* ErrorInfo.swift */; };
+		0D476F042862B9CC00262974 /* ShopItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F022862B9CC00262974 /* ShopItemTests.swift */; };
+		0D476F052862B9CC00262974 /* OrderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F032862B9CC00262974 /* OrderTests.swift */; };
+		68B572AEF91307FFA123DE00 /* Pods_Shpping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C483E819FEE5EB16195050EA /* Pods_Shpping.framework */; };
+		D8DA05E9AFDB432E9C010AE4 /* Pods_ShppingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0801337710867C1E6115717B /* Pods_ShppingTests.framework */; };
+		EB96052ACF78F8E6579EF70F /* Pods_Shpping_ShppingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E095D61A9CB735DA13534A /* Pods_Shpping_ShppingUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0801337710867C1E6115717B /* Pods_ShppingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShppingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D476EB9286222E600262974 /* Shpping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shpping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D476EBC286222E600262974 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D476EBE286222E600262974 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +56,19 @@
 		0D476ED9286222E700262974 /* ShppingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShppingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D476EDD286222E700262974 /* ShppingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShppingUITests.swift; sourceTree = "<group>"; };
 		0D476EDF286222E700262974 /* ShppingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShppingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0D476EFA2862B99700262974 /* ShopItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopItem.swift; sourceTree = "<group>"; };
+		0D476EFB2862B99700262974 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		0D476EFC2862B99700262974 /* ErrorInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorInfo.swift; sourceTree = "<group>"; };
+		0D476F022862B9CC00262974 /* ShopItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopItemTests.swift; sourceTree = "<group>"; };
+		0D476F032862B9CC00262974 /* OrderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTests.swift; sourceTree = "<group>"; };
+		167C8FD660DEC57BD2A9E826 /* Pods-Shpping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping.debug.xcconfig"; path = "Target Support Files/Pods-Shpping/Pods-Shpping.debug.xcconfig"; sourceTree = "<group>"; };
+		58F3595715F69147EB36DA8D /* Pods-Shpping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping.release.xcconfig"; path = "Target Support Files/Pods-Shpping/Pods-Shpping.release.xcconfig"; sourceTree = "<group>"; };
+		72D47CD5EB359D92B8192C62 /* Pods-ShppingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShppingTests.debug.xcconfig"; path = "Target Support Files/Pods-ShppingTests/Pods-ShppingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		789165CCDCF3D8182F556E82 /* Pods-ShppingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShppingTests.release.xcconfig"; path = "Target Support Files/Pods-ShppingTests/Pods-ShppingTests.release.xcconfig"; sourceTree = "<group>"; };
+		80B4A74BC5B6F75349D57C97 /* Pods-Shpping-ShppingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping-ShppingUITests.release.xcconfig"; path = "Target Support Files/Pods-Shpping-ShppingUITests/Pods-Shpping-ShppingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		81E095D61A9CB735DA13534A /* Pods_Shpping_ShppingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shpping_ShppingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C483E819FEE5EB16195050EA /* Pods_Shpping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shpping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E487F4DCDE9090355C8217FF /* Pods-Shpping-ShppingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping-ShppingUITests.debug.xcconfig"; path = "Target Support Files/Pods-Shpping-ShppingUITests/Pods-Shpping-ShppingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68B572AEF91307FFA123DE00 /* Pods_Shpping.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8DA05E9AFDB432E9C010AE4 /* Pods_ShppingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB96052ACF78F8E6579EF70F /* Pods_Shpping_ShppingUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +106,8 @@
 				0D476ED2286222E700262974 /* ShppingTests */,
 				0D476EDC286222E700262974 /* ShppingUITests */,
 				0D476EBA286222E600262974 /* Products */,
+				E6B0CD90B2553C5CCA589698 /* Pods */,
+				F0FD473412A3130FE12811C6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,9 +124,12 @@
 		0D476EBB286222E600262974 /* Shpping */ = {
 			isa = PBXGroup;
 			children = (
+				0D476EF62862B6F700262974 /* Domain */,
+				0D476EF02862B50F00262974 /* View */,
 				0D476EBC286222E600262974 /* AppDelegate.swift */,
 				0D476EBE286222E600262974 /* SceneDelegate.swift */,
 				0D476EC0286222E600262974 /* ViewController.swift */,
+				0D476EF92862B71800262974 /* Extension */,
 				0D476EC5286222E700262974 /* Assets.xcassets */,
 				0D476EC7286222E700262974 /* LaunchScreen.storyboard */,
 				0D476ECA286222E700262974 /* Info.plist */,
@@ -111,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				0D476ED3286222E700262974 /* ShppingTests.swift */,
+				0D476F062862B9D100262974 /* EntityTests */,
 			);
 			path = ShppingTests;
 			sourceTree = "<group>";
@@ -124,6 +155,135 @@
 			path = ShppingUITests;
 			sourceTree = "<group>";
 		};
+		0D476EF02862B50F00262974 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0D476EF52862B6EE00262974 /* HistoryOrder */,
+				0D476EF42862B6E700262974 /* OrderChecking */,
+				0D476EF32862B6DB00262974 /* Chart */,
+				0D476EF22862B6D200262974 /* ProductDetail */,
+				0D476EF12862B6C900262974 /* ProductList */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0D476EF12862B6C900262974 /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
+		0D476EF22862B6D200262974 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		0D476EF32862B6DB00262974 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		0D476EF42862B6E700262974 /* OrderChecking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OrderChecking;
+			sourceTree = "<group>";
+		};
+		0D476EF52862B6EE00262974 /* HistoryOrder */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HistoryOrder;
+			sourceTree = "<group>";
+		};
+		0D476EF62862B6F700262974 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				0D476EF82862B70D00262974 /* UseCase */,
+				0D476EF72862B70400262974 /* Entity */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		0D476EF72862B70400262974 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				0D476F012862B9B000262974 /* Service */,
+				0D476F002862B9AA00262974 /* Model */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		0D476EF82862B70D00262974 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		0D476EF92862B71800262974 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		0D476F002862B9AA00262974 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0D476EFC2862B99700262974 /* ErrorInfo.swift */,
+				0D476EFB2862B99700262974 /* Order.swift */,
+				0D476EFA2862B99700262974 /* ShopItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0D476F012862B9B000262974 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0D476F062862B9D100262974 /* EntityTests */ = {
+			isa = PBXGroup;
+			children = (
+				0D476F032862B9CC00262974 /* OrderTests.swift */,
+				0D476F022862B9CC00262974 /* ShopItemTests.swift */,
+			);
+			path = EntityTests;
+			sourceTree = "<group>";
+		};
+		E6B0CD90B2553C5CCA589698 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				167C8FD660DEC57BD2A9E826 /* Pods-Shpping.debug.xcconfig */,
+				58F3595715F69147EB36DA8D /* Pods-Shpping.release.xcconfig */,
+				E487F4DCDE9090355C8217FF /* Pods-Shpping-ShppingUITests.debug.xcconfig */,
+				80B4A74BC5B6F75349D57C97 /* Pods-Shpping-ShppingUITests.release.xcconfig */,
+				72D47CD5EB359D92B8192C62 /* Pods-ShppingTests.debug.xcconfig */,
+				789165CCDCF3D8182F556E82 /* Pods-ShppingTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F0FD473412A3130FE12811C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C483E819FEE5EB16195050EA /* Pods_Shpping.framework */,
+				81E095D61A9CB735DA13534A /* Pods_Shpping_ShppingUITests.framework */,
+				0801337710867C1E6115717B /* Pods_ShppingTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +291,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D476EE3286222E700262974 /* Build configuration list for PBXNativeTarget "Shpping" */;
 			buildPhases = (
+				3FEEA9A775D9D5F23396328C /* [CP] Check Pods Manifest.lock */,
 				0D476EB5286222E600262974 /* Sources */,
 				0D476EB6286222E600262974 /* Frameworks */,
 				0D476EB7286222E600262974 /* Resources */,
+				68D8BCC5DB26A8070AFD0088 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -148,9 +310,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D476EE6286222E700262974 /* Build configuration list for PBXNativeTarget "ShppingTests" */;
 			buildPhases = (
+				16CA53C3E98CED375B1E6392 /* [CP] Check Pods Manifest.lock */,
 				0D476ECB286222E700262974 /* Sources */,
 				0D476ECC286222E700262974 /* Frameworks */,
 				0D476ECD286222E700262974 /* Resources */,
+				F9CFE2A5F9B86AEE5B86E215 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -166,9 +330,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D476EE9286222E700262974 /* Build configuration list for PBXNativeTarget "ShppingUITests" */;
 			buildPhases = (
+				CD88E23DBAAD87B4FE1128CE /* [CP] Check Pods Manifest.lock */,
 				0D476ED5286222E700262974 /* Sources */,
 				0D476ED6286222E700262974 /* Frameworks */,
 				0D476ED7286222E700262974 /* Resources */,
+				F5D09EC18EBB32F5A3E0A47E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -249,6 +415,126 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		16CA53C3E98CED375B1E6392 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShppingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FEEA9A775D9D5F23396328C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Shpping-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68D8BCC5DB26A8070AFD0088 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Shpping/Pods-Shpping-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Shpping/Pods-Shpping-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Shpping/Pods-Shpping-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD88E23DBAAD87B4FE1128CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Shpping-ShppingUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5D09EC18EBB32F5A3E0A47E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Shpping-ShppingUITests/Pods-Shpping-ShppingUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Shpping-ShppingUITests/Pods-Shpping-ShppingUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Shpping-ShppingUITests/Pods-Shpping-ShppingUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9CFE2A5F9B86AEE5B86E215 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShppingTests/Pods-ShppingTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShppingTests/Pods-ShppingTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShppingTests/Pods-ShppingTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0D476EB5286222E600262974 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -256,6 +542,9 @@
 			files = (
 				0D476EC1286222E600262974 /* ViewController.swift in Sources */,
 				0D476EBD286222E600262974 /* AppDelegate.swift in Sources */,
+				0D476EFE2862B99700262974 /* Order.swift in Sources */,
+				0D476EFD2862B99700262974 /* ShopItem.swift in Sources */,
+				0D476EFF2862B99700262974 /* ErrorInfo.swift in Sources */,
 				0D476EBF286222E600262974 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +553,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D476F052862B9CC00262974 /* OrderTests.swift in Sources */,
+				0D476F042862B9CC00262974 /* ShopItemTests.swift in Sources */,
 				0D476ED4286222E700262974 /* ShppingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +713,7 @@
 		};
 		0D476EE4286222E700262974 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 167C8FD660DEC57BD2A9E826 /* Pods-Shpping.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -449,6 +741,7 @@
 		};
 		0D476EE5286222E700262974 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58F3595715F69147EB36DA8D /* Pods-Shpping.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -476,6 +769,7 @@
 		};
 		0D476EE7286222E700262974 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72D47CD5EB359D92B8192C62 /* Pods-ShppingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -496,6 +790,7 @@
 		};
 		0D476EE8286222E700262974 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 789165CCDCF3D8182F556E82 /* Pods-ShppingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -516,6 +811,7 @@
 		};
 		0D476EEA286222E700262974 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E487F4DCDE9090355C8217FF /* Pods-Shpping-ShppingUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -534,6 +830,7 @@
 		};
 		0D476EEB286222E700262974 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80B4A74BC5B6F75349D57C97 /* Pods-Shpping-ShppingUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
