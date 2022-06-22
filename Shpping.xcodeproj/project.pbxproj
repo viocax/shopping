@@ -97,9 +97,12 @@
 		0D476EBB286222E600262974 /* Shpping */ = {
 			isa = PBXGroup;
 			children = (
+				0D476EF62862B6F700262974 /* Domain */,
+				0D476EF02862B50F00262974 /* View */,
 				0D476EBC286222E600262974 /* AppDelegate.swift */,
 				0D476EBE286222E600262974 /* SceneDelegate.swift */,
 				0D476EC0286222E600262974 /* ViewController.swift */,
+				0D476EF92862B71800262974 /* Extension */,
 				0D476EC5286222E700262974 /* Assets.xcassets */,
 				0D476EC7286222E700262974 /* LaunchScreen.storyboard */,
 				0D476ECA286222E700262974 /* Info.plist */,
@@ -122,6 +125,83 @@
 				0D476EDF286222E700262974 /* ShppingUITestsLaunchTests.swift */,
 			);
 			path = ShppingUITests;
+			sourceTree = "<group>";
+		};
+		0D476EF02862B50F00262974 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0D476EF52862B6EE00262974 /* HistoryOrder */,
+				0D476EF42862B6E700262974 /* OrderChecking */,
+				0D476EF32862B6DB00262974 /* Chart */,
+				0D476EF22862B6D200262974 /* ProductDetail */,
+				0D476EF12862B6C900262974 /* ProductList */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0D476EF12862B6C900262974 /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
+		0D476EF22862B6D200262974 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		0D476EF32862B6DB00262974 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		0D476EF42862B6E700262974 /* OrderChecking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OrderChecking;
+			sourceTree = "<group>";
+		};
+		0D476EF52862B6EE00262974 /* HistoryOrder */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HistoryOrder;
+			sourceTree = "<group>";
+		};
+		0D476EF62862B6F700262974 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				0D476EF82862B70D00262974 /* UseCase */,
+				0D476EF72862B70400262974 /* Entity */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		0D476EF72862B70400262974 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		0D476EF82862B70D00262974 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		0D476EF92862B71800262974 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
