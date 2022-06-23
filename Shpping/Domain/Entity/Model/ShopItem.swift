@@ -8,11 +8,11 @@
 import Foundation
 import protocol Kingfisher.Resource
 
-protocol ProductListCellViewModel: AnyObject {
+protocol ProductListCellViewModel {
     var identifier: String { get }
     var title: String { get }
     var description: String { get }
-    var price: String { get }
+    var priceString: String { get }
     var image: Resource { get }
     var createTime: Date { get }
 }
@@ -22,7 +22,7 @@ struct ShopItem {
     var name: String
     var description: String
     var price: Int
-    var createTime: TimeInterval
+    var create_Time: TimeInterval
     var picture: String
 }
 
@@ -33,8 +33,32 @@ extension ShopItem: Codable {
         self.name = (try? container.decode(String.self, forKey: .name)) ?? ""
         self.description = (try? container.decode(String.self, forKey: .description)) ?? ""
         self.price = (try? container.decode(Int.self, forKey: .price)) ?? 0
-        self.createTime = (try? container.decode(TimeInterval.self, forKey: .createTime)) ?? 0
+        self.create_Time = (try? container.decode(TimeInterval.self, forKey: .create_Time)) ?? 0
         self.picture = (try? container.decode(String.self, forKey: .picture)) ?? ""
     }
 }
 
+
+extension ShopItem: ProductListCellViewModel, DateConvertable {
+    var identifier: String {
+        return self.identifer
+    }
+    
+    var title: String {
+        return self.name
+    }
+    var priceString: String {
+        guard price > 0 else {
+            return "$ --"
+        }
+        return "$ \(price)"
+    }
+    
+    var image: Resource {
+        return RandomImageInfo(urlString: picture, identifer)
+    }
+    
+    var createTime: Date {
+        return Date(timeIntervalSince1970: self.create_Time)
+    }
+}

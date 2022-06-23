@@ -13,7 +13,7 @@ protocol DateConvertable {
 
 extension DateConvertable {
     func toString(by date: Date) -> String {
-        fatalError("test")
+//        fatalError("test")
         return ""
     }
 }

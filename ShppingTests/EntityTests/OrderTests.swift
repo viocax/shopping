@@ -19,7 +19,7 @@ class OrderTests: XCTestCase {
                 {
                     "name": "Jie",
                     "description": "test 1",
-                    "createTime": \(mockDate.timeIntervalSince1970),
+                    "create_Time": \(mockDate.timeIntervalSince1970),
                     "price": 999,
                     "picture": "https://random.imagecdn.app/500/150"
                 }
@@ -34,7 +34,7 @@ class OrderTests: XCTestCase {
             XCTAssertEqual(model.createTime, mockDate.timeIntervalSince1970)
             XCTAssertEqual(model.items.count, 1)
             XCTAssertEqual(model.items[0].description, "test 1")
-            XCTAssertEqual(model.items[0].createTime, mockDate.timeIntervalSince1970)
+            XCTAssertEqual(model.items[0].create_Time, mockDate.timeIntervalSince1970)
             XCTAssertEqual(model.items[0].price, 999)
             XCTAssertEqual(model.items[0].picture, "https://random.imagecdn.app/500/150")
         } catch {
