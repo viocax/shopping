@@ -10,8 +10,13 @@ import Foundation
 extension Domain {
     class ProductDetail {
         private var model: ShopItemsViewModel
-        init(model: ShopItemsViewModel) {
+        private let repository: RepositoryProtocol
+        init(
+            model: ShopItemsViewModel,
+            repository: RepositoryProtocol = Repository.shared
+        ) {
             self.model = model
+            self.repository = repository
         }
     }
 }
@@ -19,7 +24,7 @@ extension Domain {
 // MARK: ProductDetailUseCase
 extension Domain.ProductDetail: ProductDetailUseCase {
     func addToChart(_ item: ShopItemsViewModel) {
-        fatalError()
+        repository.addToChart(item)
     }
     func getCurrentShopItem() -> ShopItemsViewModel {
         // MARK: 目前這件事僅是為了讓外部可以參考scrollView 可以滑動效果
