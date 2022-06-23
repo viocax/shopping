@@ -41,9 +41,11 @@ extension Domain.ProductList: ProductListUseCase {
         return service.request(ProductListEndpoint())
             .map { [weak self] item -> [DateConvertable & ShopItemsViewModel] in
                 let new = item + item + item + item + item + item + item
+                let tempNames = ["Dan", "Ben", "Ken", "Jane", "Kylle"]
                 let result = new.map { showItem  -> DateConvertable & ShopItemsViewModel  in
                     var copy = showItem
-                    copy.name = "Page: \(currentCount), Name: \(showItem.name)"
+                    copy.identifier = UUID().uuidString + copy.identifier
+                    copy.name = "Page: \(currentCount), Name: \(tempNames.randomElement() ?? "")"
                     copy.description = "interger \(currentCount)" + copy.description
                     copy.price = copy.price + [20, 30, 40, 50].randomElement()!
                     return copy

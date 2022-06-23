@@ -95,7 +95,7 @@ extension ProductListCell {
         titleLabel.text = viewModel.title
         descriptionLabel.text = viewModel.description
         createTimeLabel.text = viewModel.toString(by: viewModel.createTime)
-        priceLabel.text = viewModel.priceString
+        priceLabel.text = viewModel.price.formatePrice()
         pictureImageView.kf.setImage(with: viewModel.image, placeholder: UIImage(named: "warning"), options: nil, completionHandler: nil)
     }
 }

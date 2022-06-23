@@ -8,6 +8,7 @@
 import Foundation
 
 protocol RepositoryProtocol {
+    func getShopItemOfChart() -> [ShopItemsViewModel]
     func addToChart(_ item: ShopItemsViewModel)
 }
 
@@ -21,5 +22,8 @@ class Repository {
 extension Repository: RepositoryProtocol {
     func addToChart(_ item: ShopItemsViewModel) {
         currentChart.append(item)
+    }
+    func getShopItemOfChart() -> [ShopItemsViewModel] {
+        return currentChart
     }
 }

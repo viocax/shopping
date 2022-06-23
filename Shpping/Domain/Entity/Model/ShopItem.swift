@@ -9,16 +9,16 @@ import Foundation
 import protocol Kingfisher.Resource
 
 protocol ShopItemsViewModel {
-    var identifier: String { get }
+    var identifier: String { get set }
     var title: String { get }
     var description: String { get set }
-    var priceString: String { get }
+    var price: Int { get }
     var image: Resource { get }
     var createTime: Date { get }
 }
 
 struct ShopItem {
-    var identifer: String = UUID().uuidString
+    var identifier: String = UUID().uuidString
     var name: String
     var description: String
     var price: Int
@@ -40,22 +40,12 @@ extension ShopItem: Codable {
 
 
 extension ShopItem: ShopItemsViewModel, DateConvertable {
-    var identifier: String {
-        return self.identifer
-    }
-    
     var title: String {
         return self.name
     }
-    var priceString: String {
-        guard price > 0 else {
-            return "$ --"
-        }
-        return "$ \(price)"
-    }
-    
+
     var image: Resource {
-        return RandomImageInfo(urlString: picture, identifer)
+        return RandomImageInfo(urlString: picture, identifier)
     }
     
     var createTime: Date {

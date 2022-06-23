@@ -154,7 +154,7 @@ private extension ProductDetailViewController {
             vc.pictureImageView.kf.setImage(with: model.image, placeholder: UIImage(named: "warning"), options: nil, completionHandler: nil)
             vc.titleLabel.text = model.title
             vc.descriptionLabel.text = model.description
-            vc.priceLabel.text = model.priceString
+            vc.priceLabel.text = model.price.formatePrice()
         }
     }
 }

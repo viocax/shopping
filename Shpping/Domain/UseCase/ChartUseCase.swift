@@ -9,6 +9,6 @@ import Foundation
 
 protocol ChartUseCase {
     func getCurrentChartItems() -> [ChartViewCellViewModel]
-    func canCheckOut(_ list: [ChartViewCellViewModel]) -> Bool
+    func canCheckOut() -> Bool
     func toggleItems(_ cell: ChartViewCellViewModel)
 }

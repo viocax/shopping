@@ -11,7 +11,7 @@ import XCTest
 
 typealias UseCase = ProductListUseCase & ProductDetailUseCase & ChartUseCase
 
-class MockUseCase:  UseCase {
+class MockUseCase: UseCase {
 
     var injectAddToChart: ((ShopItemsViewModel) -> Void)?
     func addToChart(_ item: ShopItemsViewModel) {
@@ -48,8 +48,8 @@ class MockUseCase:  UseCase {
     func getCurrentChartItems() -> [ChartViewCellViewModel] {
         return injectCurrnetChartItems
     }
-    var injectCanCheckOut: (([ChartViewCellViewModel]) -> Bool)?
-    func canCheckOut(_ list: [ChartViewCellViewModel]) -> Bool {
-        return injectCanCheckOut?(list) ?? false
+    var injectCanCheckOut: (() -> Bool)?
+    func canCheckOut() -> Bool {
+        return injectCanCheckOut?() ?? false
     }
 }
