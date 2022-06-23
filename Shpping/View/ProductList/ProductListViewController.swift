@@ -58,7 +58,7 @@ private extension ProductListViewController {
     }
     func bindView() {
         // FIXME: interface
-        typealias CellForRowAt = ((UITableView, Int, (ProductListCellViewModel & DateConvertable)) -> UITableViewCell)
+        typealias CellForRowAt = ((UITableView, Int, (ShopItemsViewModel & DateConvertable)) -> UITableViewCell)
         let cellForRow: CellForRowAt = { tableView, row, model in
             guard let cell = tableView.dequeueReusableCell(ProductListCell.self, indexPath: .init(row: row, section: .zero)) else {
                 return .init()
@@ -67,7 +67,7 @@ private extension ProductListViewController {
             return cell
         }
         let clickCell = tableView.rx
-            .modelSelected(ProductListCellViewModel.self)
+            .modelSelected(ShopItemsViewModel.self)
             .asDriver()
         let loadingMore = loadMorePublisher
             .distinctUntilChanged()

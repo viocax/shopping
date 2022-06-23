@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 protocol ProductCoordinatorProcotol {
-    func showDetailPage(_ model: ProductListCellViewModel) -> Observable<Void>
+    func showDetailPage(_ model: ShopItemsViewModel) -> Observable<Void>
 }
 
 final class ProductCoordinator {
@@ -17,7 +17,7 @@ final class ProductCoordinator {
 }
 
 extension ProductCoordinator: ProductCoordinatorProcotol {
-    func showDetailPage(_ model: ProductListCellViewModel) -> Observable<Void> {
+    func showDetailPage(_ model: ShopItemsViewModel) -> Observable<Void> {
         return .create { [weak self] subscriber in
             guard let viewController = self?.viewCotroller else {
                 subscriber.onCompleted()

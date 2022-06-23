@@ -11,5 +11,5 @@ import class RxSwift.Observable
 protocol ProductListUseCase {
     func resetPageCount() -> Observable<Void>
     func plusPage() -> Observable<Void>
-    func getShoppingList() -> Observable<[ProductListCellViewModel & DateConvertable]>
+    func getShoppingList() -> Observable<[ShopItemsViewModel & DateConvertable]>
 }

@@ -9,11 +9,11 @@ import XCTest
 @testable import Shpping
 @testable import RxSwift
 
-typealias UseCase = ProductListUseCase
+typealias UseCase = ProductListUseCase & ProductDetailUseCase
 
 class MockUseCase:  UseCase {
-    var injectGetShoppingList: [Observable<[DateConvertable & ProductListCellViewModel]>] = []
-    func getShoppingList() -> Observable<[DateConvertable & ProductListCellViewModel]> {
+    var injectGetShoppingList: [Observable<[DateConvertable & ShopItemsViewModel]>] = []
+    func getShoppingList() -> Observable<[DateConvertable & ShopItemsViewModel]> {
         if !injectGetShoppingList.isEmpty {
             return injectGetShoppingList.removeFirst()
         }
@@ -27,5 +27,10 @@ class MockUseCase:  UseCase {
     var injectPlusCount: Observable<Void> = .empty()
     func plusPage() -> Observable<Void> {
         return injectPlusCount
+    }
+
+    var injectShopItems: ShopItemsViewModel!
+    func getCurrentShopItem() -> ShopItemsViewModel {
+        return injectShopItems
     }
 }
