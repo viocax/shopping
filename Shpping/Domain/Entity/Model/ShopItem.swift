@@ -8,7 +8,7 @@
 import Foundation
 import protocol Kingfisher.Resource
 
-protocol ProductListCellViewModel {
+protocol ShopItemsViewModel {
     var identifier: String { get }
     var title: String { get }
     var description: String { get }
@@ -39,7 +39,7 @@ extension ShopItem: Codable {
 }
 
 
-extension ShopItem: ProductListCellViewModel, DateConvertable {
+extension ShopItem: ShopItemsViewModel, DateConvertable {
     var identifier: String {
         return self.identifer
     }

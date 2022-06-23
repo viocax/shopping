@@ -14,7 +14,7 @@ extension Domain {
         // MARK: from server will better
         private let maxPage: Int
         private let service: NetworkService
-        private var tempList: [DateConvertable & ProductListCellViewModel] = []
+        private var tempList: [DateConvertable & ShopItemsViewModel] = []
         
         init(service: NetworkService = APIService(), maxCount: Int = 5) {
             self.service = service
@@ -33,15 +33,15 @@ extension Domain.ProductList: ProductListUseCase {
         return .just(pageCount += 1)
     }
 
-    func getShoppingList() -> Observable<[DateConvertable & ProductListCellViewModel]> {
+    func getShoppingList() -> Observable<[DateConvertable & ShopItemsViewModel]> {
         let currentCount = pageCount
         guard currentCount <= maxPage else {
             return .empty()
         }
         return service.request(ProductListEndpoint())
-            .map { [weak self] item -> [DateConvertable & ProductListCellViewModel] in
+            .map { [weak self] item -> [DateConvertable & ShopItemsViewModel] in
                 let new = item + item + item + item + item + item + item
-                let result = new.map { showItem  -> DateConvertable & ProductListCellViewModel  in
+                let result = new.map { showItem  -> DateConvertable & ShopItemsViewModel  in
                     var copy = showItem
                     copy.name = "Page: \(currentCount), Name: \(showItem.name)"
                     copy.description = "interger \(currentCount)" + copy.description

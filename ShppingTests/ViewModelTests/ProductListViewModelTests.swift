@@ -10,22 +10,11 @@ import XCTest
 @testable import RxTest
 @testable import RxCocoa
 @testable import RxSwift
-@testable import Kingfisher
+
 
 class ProductListViewModelTests: XCTestCase {
 
-    typealias Model = DateConvertable & ProductListCellViewModel
-    class MockModel: Model {
-        var identifier: String = UUID().uuidString
-        var title: String = ""
-        var description: String = ""
-        var priceString: String = ""
-        var image: Resource = RandomImageInfo(urlString: "")
-        var createTime: Date = .init()
-        init(_ id: Int) {
-            self.title = "Test: \(id)"
-        }
-    }
+
 
     func test_clickProduct() {
         // MARK: Dependency
@@ -34,14 +23,14 @@ class ProductListViewModelTests: XCTestCase {
         let mockUseCase = MockUseCase()
 
         // MARK: mock list
-        let mockModel: ProductListCellViewModel = MockModel(99999)
+        let mockModel: ShopItemsViewModel = MockShopModel(99999)
         let mockCoordinator = MockCoordinator()
         mockCoordinator.injectShowDetailPage = { model in
             XCTAssertEqual(mockModel.identifier, model.identifier)
             return .just(())
         }
         let viewModel = ProductListViewModel(useCase: mockUseCase, coordiantor: mockCoordinator)
-        let triggerClick = PublishSubject<ProductListCellViewModel>()
+        let triggerClick = PublishSubject<ShopItemsViewModel>()
         let input = ProductListViewModel
             .Input(
                 viewWillAppear: .empty(),
@@ -76,7 +65,7 @@ class ProductListViewModelTests: XCTestCase {
         let mockUseCase = MockUseCase()
 
         // MARK: mock list
-        let mockList = (0...10).map(MockModel.init)
+        let mockList = (0...10).map(MockShopModel.init)
         let mockError = ErrorInfo(case: .unspport, message: "test")
         mockUseCase.injectGetShoppingList = [
             .just(mockList),
@@ -125,7 +114,7 @@ class ProductListViewModelTests: XCTestCase {
         output.isLoading
             .drive(observerIsLoading)
             .disposed(by: disposeBag)
-        let observerList = testScheduler.createObserver([DateConvertable & ProductListCellViewModel].self)
+        let observerList = testScheduler.createObserver([DateConvertable & ShopItemsViewModel].self)
         output.list
             .drive(observerList)
             .disposed(by: disposeBag)
@@ -139,7 +128,7 @@ class ProductListViewModelTests: XCTestCase {
             .disposed(by: disposeBag)
 
         // MARK: Expectaction
-        let expectList: [Recorded<Event<[Model]>>] = [
+        let expectList: [Recorded<Event<[ShopModel]>>] = [
             .next(100, mockList),
             .next(200, []),
             .next(300, mockList + mockList)

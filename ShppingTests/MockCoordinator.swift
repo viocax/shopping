@@ -9,10 +9,22 @@ import Foundation
 @testable import Shpping
 @testable import RxSwift
 
-class MockCoordinator: ProductCoordinatorProcotol {
+typealias Coordinator = ProductCoordinatorProcotol & ProductDetailCoordinatorProtocol
+
+class MockCoordinator: Coordinator  {
     
-    var injectShowDetailPage: ((ProductListCellViewModel) -> Observable<Void>)!
-    func showDetailPage(_ model: ProductListCellViewModel) -> Observable<Void> {
+    var injectShowDetailPage: ((ShopItemsViewModel) -> Observable<Void>)!
+    func showDetailPage(_ model: ShopItemsViewModel) -> Observable<Void> {
         return injectShowDetailPage(model)
+    }
+
+    var injectShowChartView: Observable<Void> = .empty()
+    func showChartView() -> Observable<Void> {
+        return injectShowChartView
+    }
+
+    var injectOrderCheckingView: ((ShopItemsViewModel) -> Observable<Void>)!
+    func showOrderCheckingView(_ model: ShopItemsViewModel) -> Observable<Void> {
+        return injectOrderCheckingView(model)
     }
 }

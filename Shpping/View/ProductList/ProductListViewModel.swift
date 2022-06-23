@@ -23,10 +23,10 @@ extension ProductListViewModel: ViewModelType {
         let viewWillAppear: Driver<Void>
         let pullRefresh: Driver<Void>
         let loadingMore: Driver<Void>
-        let clickProduct: Driver<ProductListCellViewModel>
+        let clickProduct: Driver<ShopItemsViewModel>
     }
     struct Output {
-        let list: Driver<[ProductListCellViewModel & DateConvertable]>
+        let list: Driver<[ShopItemsViewModel & DateConvertable]>
         let isLoading: Driver<Bool>
         let isEmpty: Driver<Bool>
         let error: Driver<ErrorInfo>

@@ -91,7 +91,7 @@ private extension ProductListCell {
 
 // MARK: Public
 extension ProductListCell {
-    func configCell(_ viewModel: ProductListCellViewModel & DateConvertable) {
+    func configCell(_ viewModel: ShopItemsViewModel & DateConvertable) {
         titleLabel.text = viewModel.title
         descriptionLabel.text = viewModel.description
         createTimeLabel.text = viewModel.toString(by: viewModel.createTime)
