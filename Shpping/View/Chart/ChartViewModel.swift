@@ -28,18 +28,29 @@ extension ChartViewModel: ViewModelType {
     }
     func transform(_ input: Input) -> Output {
 
-        let currentList = input.bindView
+        let initalList = input.bindView
             .map { self.useCase.getCurrentChartItems() }
 
-        let isEnable = input.tapCell
+        let toggle = input.tapCell
             .map(useCase.toggleItems(_:))
-            .map {
-                return self.useCase
-                    .canCheckOut(self.useCase.getCurrentChartItems())
-            }.distinctUntilChanged()
+            .map { self.useCase.getCurrentChartItems() }
+
+        let list = Driver
+            .merge(
+                initalList,
+                toggle
+            )
+        
+        let isEnable = Driver
+            .merge(
+                input.bindView,
+                toggle.map { _ in }
+            )
+            .map { _ in self.useCase.canCheckOut() }
+            .distinctUntilChanged()
 
         return .init(
-            list: currentList,
+            list: list,
             isEnablePurchase: isEnable
         )
     }

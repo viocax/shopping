@@ -5,10 +5,16 @@
 //  Created by Jie liang Huang on 2022/6/23.
 //
 
-import Foundation
+import XCTest
 @testable import Shpping
 
 class MockRepo: RepositoryProtocol {
+
+    func getShopItemOfChart() -> [ShopItemsViewModel] {
+        XCTFail()
+        return []
+    }
+    
     var injectAddToChart: ((ShopItemsViewModel) -> Void)?
     func addToChart(_ item: ShopItemsViewModel) {
         injectAddToChart?(item)

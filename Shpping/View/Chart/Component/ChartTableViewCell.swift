@@ -8,9 +8,13 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import protocol Kingfisher.Resource
 
-protocol ChartViewCellViewModel: AnyObject {
-    var info: ShopItemsViewModel { get }
+protocol ChartViewCellViewModel {
+    var id: String { get }
+    var image: Resource { get }
+    var title: String { get }
+    var price: String { get }
     var isSelected: Bool { get set }
 }
 
@@ -76,9 +80,9 @@ private extension ChartTableViewCell {
 extension ChartTableViewCell {
     // FIXME: interface
     func config(viewModel: ChartViewCellViewModel) {
-        titleLabel.text = viewModel.info.title
-        priceLabel.text = viewModel.info.priceString
-        pictureImageView.kf.setImage(with: viewModel.info.image, placeholder: UIImage(named: "warning"), options: nil, completionHandler: nil)
+        titleLabel.text = viewModel.title
+        priceLabel.text = viewModel.price
+        pictureImageView.kf.setImage(with: viewModel.image, placeholder: UIImage(named: "warning"), options: nil, completionHandler: nil)
         isCheck.onNext(viewModel.isSelected)
     }
     var isCheck: Binder<Bool> {

@@ -17,3 +17,12 @@ extension DateConvertable {
         return ""
     }
 }
+
+extension Int {
+    func formatePrice() -> String {
+        guard self > 0 else {
+            return "$ --"
+        }
+        return "$ \(self)"
+    }
+}

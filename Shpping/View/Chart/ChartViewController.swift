@@ -108,7 +108,13 @@ private extension ChartViewController {
             .drive(tableView.rx.items)(cellForRowAt)
             .disposed(by: disposeBag)
         output.isEnablePurchase
-            .drive(confirmButton.rx.isEnabled)
+            .drive(buttonEnable)
             .disposed(by: disposeBag)
+    }
+    var buttonEnable: Binder<Bool> {
+        return Binder(self.confirmButton) { button, isEnable in
+            button.backgroundColor = isEnable ? .black : .black.withAlphaComponent(0.5)
+            button.isEnabled = isEnable
+        }
     }
 }
