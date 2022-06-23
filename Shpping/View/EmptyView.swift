@@ -23,14 +23,15 @@ class EmptyView: UIView {
         backgroundColor = .white
         addSubview(imageView)
         imageView.clipsToBounds = true
-        imageView.contentMode = .center
+        imageView.contentMode = .scaleAspectFit
         imageView.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
+            make.size.equalTo(100)
         }
         addSubview(label)
         label.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.bottom.equalTo(imageView.snp.top).inset(20)
+            make.bottom.equalTo(imageView.snp.top).offset(-20)
         }
         label.text = "空空如也"
         label.textColor = .black
