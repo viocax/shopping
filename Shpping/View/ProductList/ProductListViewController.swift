@@ -101,7 +101,7 @@ private extension ProductListViewController {
             .drive(view.rx.isShowEmptyView)
             .disposed(by: disposeBag)
         output.error
-            .drive()
+            .drive() // TODO: add error view
             .disposed(by: disposeBag)
         tableView.rx.setDelegate(self)
             .disposed(by: disposeBag)

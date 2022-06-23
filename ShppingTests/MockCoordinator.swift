@@ -9,7 +9,7 @@ import Foundation
 @testable import Shpping
 @testable import RxSwift
 
-typealias Coordinator = ProductCoordinatorProcotol & ProductDetailCoordinatorProtocol
+typealias Coordinator = ProductCoordinatorProcotol & ProductDetailCoordinatorProtocol & ChartViewCoordinatorProtocol
 
 class MockCoordinator: Coordinator  {
     
@@ -26,5 +26,10 @@ class MockCoordinator: Coordinator  {
     var injectOrderCheckingView: ((ShopItemsViewModel) -> Observable<Void>)!
     func showOrderCheckingView(_ model: ShopItemsViewModel) -> Observable<Void> {
         return injectOrderCheckingView(model)
+    }
+
+    var injectMoreOrderCheckingView: (([ShopItemsViewModel]) -> Observable<Void>)!
+    func showOrderView(models: [ShopItemsViewModel]) -> Observable<Void> {
+        return injectMoreOrderCheckingView(models)
     }
 }

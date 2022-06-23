@@ -59,6 +59,11 @@
 		0D476F66286464C700262974 /* ProductDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F65286464C700262974 /* ProductDetailViewModelTests.swift */; };
 		0D476F682864661300262974 /* MockShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F672864661300262974 /* MockShopModel.swift */; };
 		0D476F6A286486CF00262974 /* Domain.ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F69286486CF00262974 /* Domain.ProductDetail.swift */; };
+		0D476F6C28648B6D00262974 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F6B28648B6D00262974 /* ChartViewModel.swift */; };
+		0D476F6E2864900900262974 /* ChartViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F6D2864900900262974 /* ChartViewModelTests.swift */; };
+		0D476F70286490C600262974 /* ChartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F6F286490C500262974 /* ChartUseCase.swift */; };
+		0D476F72286490E500262974 /* ChartViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F71286490E500262974 /* ChartViewCoordinator.swift */; };
+		0D476F7428649F5B00262974 /* Domain.Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F7328649F5B00262974 /* Domain.Chart.swift */; };
 		68B572AEF91307FFA123DE00 /* Pods_Shpping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C483E819FEE5EB16195050EA /* Pods_Shpping.framework */; };
 		D8DA05E9AFDB432E9C010AE4 /* Pods_ShppingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0801337710867C1E6115717B /* Pods_ShppingTests.framework */; };
 		EB96052ACF78F8E6579EF70F /* Pods_Shpping_ShppingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E095D61A9CB735DA13534A /* Pods_Shpping_ShppingUITests.framework */; };
@@ -139,6 +144,11 @@
 		0D476F65286464C700262974 /* ProductDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModelTests.swift; sourceTree = "<group>"; };
 		0D476F672864661300262974 /* MockShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockShopModel.swift; sourceTree = "<group>"; };
 		0D476F69286486CF00262974 /* Domain.ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain.ProductDetail.swift; sourceTree = "<group>"; };
+		0D476F6B28648B6D00262974 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
+		0D476F6D2864900900262974 /* ChartViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModelTests.swift; sourceTree = "<group>"; };
+		0D476F6F286490C500262974 /* ChartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartUseCase.swift; sourceTree = "<group>"; };
+		0D476F71286490E500262974 /* ChartViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewCoordinator.swift; sourceTree = "<group>"; };
+		0D476F7328649F5B00262974 /* Domain.Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain.Chart.swift; sourceTree = "<group>"; };
 		167C8FD660DEC57BD2A9E826 /* Pods-Shpping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping.debug.xcconfig"; path = "Target Support Files/Pods-Shpping/Pods-Shpping.debug.xcconfig"; sourceTree = "<group>"; };
 		58F3595715F69147EB36DA8D /* Pods-Shpping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping.release.xcconfig"; path = "Target Support Files/Pods-Shpping/Pods-Shpping.release.xcconfig"; sourceTree = "<group>"; };
 		72D47CD5EB359D92B8192C62 /* Pods-ShppingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShppingTests.debug.xcconfig"; path = "Target Support Files/Pods-ShppingTests/Pods-ShppingTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -282,6 +292,8 @@
 			children = (
 				0D476F1A2863163800262974 /* Component */,
 				0D476F1828630E0600262974 /* ChartViewController.swift */,
+				0D476F6B28648B6D00262974 /* ChartViewModel.swift */,
+				0D476F71286490E500262974 /* ChartViewCoordinator.swift */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -327,6 +339,7 @@
 			children = (
 				0D476F3F286422D100262974 /* Implement */,
 				0D476F312863836D00262974 /* ProductListUseCase.swift */,
+				0D476F6F286490C500262974 /* ChartUseCase.swift */,
 				0D476F61286462F300262974 /* ProductDetailUseCase.swift */,
 			);
 			path = UseCase;
@@ -358,6 +371,7 @@
 		0D476F012862B9B000262974 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				0D476F752864A1EE00262974 /* Repository */,
 				0D476F442864238D00262974 /* Network */,
 			);
 			path = Service;
@@ -410,6 +424,7 @@
 				0D476F40286422E500262974 /* Domain.swift */,
 				0D476F572864567B00262974 /* Domain.ProductList.swift */,
 				0D476F69286486CF00262974 /* Domain.ProductDetail.swift */,
+				0D476F7328649F5B00262974 /* Domain.Chart.swift */,
 			);
 			path = Implement;
 			sourceTree = "<group>";
@@ -428,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				0D476F392863845500262974 /* ProductListViewModelTests.swift */,
+				0D476F6D2864900900262974 /* ChartViewModelTests.swift */,
 				0D476F65286464C700262974 /* ProductDetailViewModelTests.swift */,
 			);
 			path = ViewModelTests;
@@ -439,6 +455,13 @@
 				0D476F5B286456D900262974 /* ProductListUseCaseTests.swift */,
 			);
 			path = UseCaseTests;
+			sourceTree = "<group>";
+		};
+		0D476F752864A1EE00262974 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		E6B0CD90B2553C5CCA589698 /* Pods */ = {
@@ -724,6 +747,7 @@
 				0D476F1C2863168800262974 /* ChartTableViewCell.swift in Sources */,
 				0D476F322863836D00262974 /* ProductListUseCase.swift in Sources */,
 				0D476F62286462F300262974 /* ProductDetailUseCase.swift in Sources */,
+				0D476F72286490E500262974 /* ChartViewCoordinator.swift in Sources */,
 				0D476EC1286222E600262974 /* ViewController.swift in Sources */,
 				0D476F6028645D7E00262974 /* ProductDetailViewModel.swift in Sources */,
 				0D476F2C2863819400262974 /* DateConvertable.swift in Sources */,
@@ -733,9 +757,11 @@
 				0D476F2E286381A700262974 /* RandomImageInfo.swift in Sources */,
 				0D476EBD286222E600262974 /* AppDelegate.swift in Sources */,
 				0D476F102862C14800262974 /* ProductListViewController.swift in Sources */,
+				0D476F6C28648B6D00262974 /* ChartViewModel.swift in Sources */,
 				0D476F36286383DC00262974 /* HUDTracker.swift in Sources */,
 				0D476EFE2862B99700262974 /* Order.swift in Sources */,
 				0D476F1E2863460B00262974 /* OrderCheckingViewController.swift in Sources */,
+				0D476F70286490C600262974 /* ChartUseCase.swift in Sources */,
 				0D476F41286422E500262974 /* Domain.swift in Sources */,
 				0D476F56286441C800262974 /* EmptyView.swift in Sources */,
 				0D476F5228643EFD00262974 /* Reacitve+UIView.swift in Sources */,
@@ -751,6 +777,7 @@
 				0D476EFF2862B99700262974 /* ErrorInfo.swift in Sources */,
 				0D476F582864567B00262974 /* Domain.ProductList.swift in Sources */,
 				0D476F172862FCB700262974 /* ProductDetailViewController.swift in Sources */,
+				0D476F7428649F5B00262974 /* Domain.Chart.swift in Sources */,
 				0D476EBF286222E600262974 /* SceneDelegate.swift in Sources */,
 				0D476F2A28637E1500262974 /* ProductListViewModel.swift in Sources */,
 				0D476F382863840A00262974 /* Reactive+UIViewController.swift in Sources */,
@@ -767,6 +794,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D476F052862B9CC00262974 /* OrderTests.swift in Sources */,
+				0D476F6E2864900900262974 /* ChartViewModelTests.swift in Sources */,
 				0D476F3E2864117700262974 /* MockCoordinator.swift in Sources */,
 				0D476F5E2864570300262974 /* MockService.swift in Sources */,
 				0D476F042862B9CC00262974 /* ShopItemTests.swift in Sources */,

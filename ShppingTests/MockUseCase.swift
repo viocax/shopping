@@ -9,9 +9,15 @@ import XCTest
 @testable import Shpping
 @testable import RxSwift
 
-typealias UseCase = ProductListUseCase & ProductDetailUseCase
+typealias UseCase = ProductListUseCase & ProductDetailUseCase & ChartUseCase
 
 class MockUseCase:  UseCase {
+
+    var injectAddToChart: ((ShopItemsViewModel) -> Void)?
+    func addToChart(_ item: ShopItemsViewModel) {
+        injectAddToChart?(item)
+    }
+
     var injectGetShoppingList: [Observable<[DateConvertable & ShopItemsViewModel]>] = []
     func getShoppingList() -> Observable<[DateConvertable & ShopItemsViewModel]> {
         if !injectGetShoppingList.isEmpty {
@@ -32,5 +38,18 @@ class MockUseCase:  UseCase {
     var injectShopItems: ShopItemsViewModel!
     func getCurrentShopItem() -> ShopItemsViewModel {
         return injectShopItems
+    }
+
+    var injectToggleEvent: ((ChartViewCellViewModel) -> Void)?
+    func toggleItems(_ cell: ChartViewCellViewModel) {
+        injectToggleEvent?(cell)
+    }
+    var injectCurrnetChartItems: [ChartViewCellViewModel] = []
+    func getCurrentChartItems() -> [ChartViewCellViewModel] {
+        return injectCurrnetChartItems
+    }
+    var injectCanCheckOut: (([ChartViewCellViewModel]) -> Bool)?
+    func canCheckOut(_ list: [ChartViewCellViewModel]) -> Bool {
+        return injectCanCheckOut?(list) ?? false
     }
 }
