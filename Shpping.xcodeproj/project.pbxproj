@@ -30,6 +30,18 @@
 		0D476F2128634AFF00262974 /* OrderCheckingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F2028634AFF00262974 /* OrderCheckingCell.swift */; };
 		0D476F232863777000262974 /* HistoryOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F222863777000262974 /* HistoryOrderViewController.swift */; };
 		0D476F26286378A700262974 /* HistoryOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F25286378A700262974 /* HistoryOrderCell.swift */; };
+		0D476F2828637D7300262974 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F2728637D7300262974 /* ViewModelType.swift */; };
+		0D476F2A28637E1500262974 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F2928637E1500262974 /* ProductListViewModel.swift */; };
+		0D476F2C2863819400262974 /* DateConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F2B2863819400262974 /* DateConvertable.swift */; };
+		0D476F2E286381A700262974 /* RandomImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F2D286381A700262974 /* RandomImageInfo.swift */; };
+		0D476F302863835800262974 /* ProductCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F2F2863835800262974 /* ProductCoordinator.swift */; };
+		0D476F322863836D00262974 /* ProductListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F312863836D00262974 /* ProductListUseCase.swift */; };
+		0D476F34286383C700262974 /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F33286383C700262974 /* ErrorTracker.swift */; };
+		0D476F36286383DC00262974 /* HUDTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F35286383DC00262974 /* HUDTracker.swift */; };
+		0D476F382863840A00262974 /* Reactive+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F372863840A00262974 /* Reactive+UIViewController.swift */; };
+		0D476F3A2863845500262974 /* ProductListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F392863845500262974 /* ProductListViewModelTests.swift */; };
+		0D476F3C286384A800262974 /* MockUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F3B286384A800262974 /* MockUseCase.swift */; };
+		0D476F3E2864117700262974 /* MockCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F3D2864117700262974 /* MockCoordinator.swift */; };
 		68B572AEF91307FFA123DE00 /* Pods_Shpping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C483E819FEE5EB16195050EA /* Pods_Shpping.framework */; };
 		D8DA05E9AFDB432E9C010AE4 /* Pods_ShppingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0801337710867C1E6115717B /* Pods_ShppingTests.framework */; };
 		EB96052ACF78F8E6579EF70F /* Pods_Shpping_ShppingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E095D61A9CB735DA13534A /* Pods_Shpping_ShppingUITests.framework */; };
@@ -81,6 +93,18 @@
 		0D476F2028634AFF00262974 /* OrderCheckingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCheckingCell.swift; sourceTree = "<group>"; };
 		0D476F222863777000262974 /* HistoryOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOrderViewController.swift; sourceTree = "<group>"; };
 		0D476F25286378A700262974 /* HistoryOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOrderCell.swift; sourceTree = "<group>"; };
+		0D476F2728637D7300262974 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		0D476F2928637E1500262974 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
+		0D476F2B2863819400262974 /* DateConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConvertable.swift; sourceTree = "<group>"; };
+		0D476F2D286381A700262974 /* RandomImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageInfo.swift; sourceTree = "<group>"; };
+		0D476F2F2863835800262974 /* ProductCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCoordinator.swift; sourceTree = "<group>"; };
+		0D476F312863836D00262974 /* ProductListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListUseCase.swift; sourceTree = "<group>"; };
+		0D476F33286383C700262974 /* ErrorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
+		0D476F35286383DC00262974 /* HUDTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDTracker.swift; sourceTree = "<group>"; };
+		0D476F372863840A00262974 /* Reactive+UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reactive+UIViewController.swift"; sourceTree = "<group>"; };
+		0D476F392863845500262974 /* ProductListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModelTests.swift; sourceTree = "<group>"; };
+		0D476F3B286384A800262974 /* MockUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUseCase.swift; sourceTree = "<group>"; };
+		0D476F3D2864117700262974 /* MockCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoordinator.swift; sourceTree = "<group>"; };
 		167C8FD660DEC57BD2A9E826 /* Pods-Shpping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping.debug.xcconfig"; path = "Target Support Files/Pods-Shpping/Pods-Shpping.debug.xcconfig"; sourceTree = "<group>"; };
 		58F3595715F69147EB36DA8D /* Pods-Shpping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping.release.xcconfig"; path = "Target Support Files/Pods-Shpping/Pods-Shpping.release.xcconfig"; sourceTree = "<group>"; };
 		72D47CD5EB359D92B8192C62 /* Pods-ShppingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShppingTests.debug.xcconfig"; path = "Target Support Files/Pods-ShppingTests/Pods-ShppingTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +172,9 @@
 				0D476EF02862B50F00262974 /* View */,
 				0D476EBC286222E600262974 /* AppDelegate.swift */,
 				0D476EBE286222E600262974 /* SceneDelegate.swift */,
+				0D476F35286383DC00262974 /* HUDTracker.swift */,
+				0D476F33286383C700262974 /* ErrorTracker.swift */,
+				0D476F2728637D7300262974 /* ViewModelType.swift */,
 				0D476EC0286222E600262974 /* ViewController.swift */,
 				0D476EF92862B71800262974 /* Extension */,
 				0D476EC5286222E700262974 /* Assets.xcassets */,
@@ -161,6 +188,9 @@
 			isa = PBXGroup;
 			children = (
 				0D476ED3286222E700262974 /* ShppingTests.swift */,
+				0D476F3B286384A800262974 /* MockUseCase.swift */,
+				0D476F3D2864117700262974 /* MockCoordinator.swift */,
+				0D476F392863845500262974 /* ProductListViewModelTests.swift */,
 				0D476F062862B9D100262974 /* EntityTests */,
 			);
 			path = ShppingTests;
@@ -192,6 +222,8 @@
 			children = (
 				0D476F132862C2A700262974 /* Componet */,
 				0D476F0F2862C14800262974 /* ProductListViewController.swift */,
+				0D476F2F2863835800262974 /* ProductCoordinator.swift */,
+				0D476F2928637E1500262974 /* ProductListViewModel.swift */,
 			);
 			path = ProductList;
 			sourceTree = "<group>";
@@ -252,6 +284,7 @@
 		0D476EF82862B70D00262974 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				0D476F312863836D00262974 /* ProductListUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -259,6 +292,7 @@
 		0D476EF92862B71800262974 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				0D476F372863840A00262974 /* Reactive+UIViewController.swift */,
 				0D476F112862C20200262974 /* extension+UITableView.swift */,
 			);
 			path = Extension;
@@ -269,6 +303,8 @@
 			children = (
 				0D476EFC2862B99700262974 /* ErrorInfo.swift */,
 				0D476EFB2862B99700262974 /* Order.swift */,
+				0D476F2D286381A700262974 /* RandomImageInfo.swift */,
+				0D476F2B2863819400262974 /* DateConvertable.swift */,
 				0D476EFA2862B99700262974 /* ShopItem.swift */,
 			);
 			path = Model;
@@ -602,21 +638,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D476F1C2863168800262974 /* ChartTableViewCell.swift in Sources */,
+				0D476F322863836D00262974 /* ProductListUseCase.swift in Sources */,
 				0D476EC1286222E600262974 /* ViewController.swift in Sources */,
+				0D476F2C2863819400262974 /* DateConvertable.swift in Sources */,
 				0D476F232863777000262974 /* HistoryOrderViewController.swift in Sources */,
+				0D476F2E286381A700262974 /* RandomImageInfo.swift in Sources */,
 				0D476EBD286222E600262974 /* AppDelegate.swift in Sources */,
 				0D476F102862C14800262974 /* ProductListViewController.swift in Sources */,
+				0D476F36286383DC00262974 /* HUDTracker.swift in Sources */,
 				0D476EFE2862B99700262974 /* Order.swift in Sources */,
 				0D476F1E2863460B00262974 /* OrderCheckingViewController.swift in Sources */,
 				0D476EFD2862B99700262974 /* ShopItem.swift in Sources */,
 				0D476F152862C2B700262974 /* ProductListCell.swift in Sources */,
+				0D476F34286383C700262974 /* ErrorTracker.swift in Sources */,
 				0D476F2128634AFF00262974 /* OrderCheckingCell.swift in Sources */,
+				0D476F2828637D7300262974 /* ViewModelType.swift in Sources */,
 				0D476EFF2862B99700262974 /* ErrorInfo.swift in Sources */,
 				0D476F172862FCB700262974 /* ProductDetailViewController.swift in Sources */,
 				0D476EBF286222E600262974 /* SceneDelegate.swift in Sources */,
+				0D476F2A28637E1500262974 /* ProductListViewModel.swift in Sources */,
+				0D476F382863840A00262974 /* Reactive+UIViewController.swift in Sources */,
 				0D476F122862C20200262974 /* extension+UITableView.swift in Sources */,
 				0D476F1928630E0600262974 /* ChartViewController.swift in Sources */,
 				0D476F26286378A700262974 /* HistoryOrderCell.swift in Sources */,
+				0D476F302863835800262974 /* ProductCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,7 +670,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D476F052862B9CC00262974 /* OrderTests.swift in Sources */,
+				0D476F3E2864117700262974 /* MockCoordinator.swift in Sources */,
 				0D476F042862B9CC00262974 /* ShopItemTests.swift in Sources */,
+				0D476F3C286384A800262974 /* MockUseCase.swift in Sources */,
+				0D476F3A2863845500262974 /* ProductListViewModelTests.swift in Sources */,
 				0D476ED4286222E700262974 /* ShppingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -41,17 +41,17 @@ private extension ProductListViewController {
     }
     func bindView() {
         // FIXME: interface
-        typealias CellForRowAt = ((UITableView, Int, String) -> UITableViewCell)
+        typealias CellForRowAt = ((UITableView, Int, (ProductListCellViewModel & DateConvertable)) -> UITableViewCell)
         let cellForRow: CellForRowAt = { tableView, row, model in
             guard let cell = tableView.dequeueReusableCell(ProductListCell.self, indexPath: .init(row: row, section: .zero)) else {
                 return .init()
             }
-            cell.configCell()
+            cell.configCell(model)
             return cell
         }
-        Driver.just((0...10).map(String.init))
-            .drive(tableView.rx.items)(cellForRow)
-            .disposed(by: disposeBag)
+//        Driver.just((0...10).map(String.init))
+//            .drive(tableView.rx.items)(cellForRow)
+//            .disposed(by: disposeBag)
     }
 }
 
