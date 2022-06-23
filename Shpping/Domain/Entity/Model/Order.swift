@@ -8,6 +8,7 @@
 import Foundation
 
 struct Order {
+    var identifer: String = UUID().uuidString
     var items: [ShopItem]
     var createTime: TimeInterval
     var price: Int

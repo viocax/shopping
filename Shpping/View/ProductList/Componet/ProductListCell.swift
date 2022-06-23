@@ -91,18 +91,11 @@ private extension ProductListCell {
 
 // MARK: Public
 extension ProductListCell {
-    // FIXME: interface 
-    func configCell() {
-        self.titleLabel.text = "Test title: .12345667885"
-        self.descriptionLabel.text = "Test: descriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabel"
-        self.createTimeLabel.text = "\(Date().timeIntervalSince1970)"
-        self.priceLabel.text = "$99999999"
-        struct ResouceModel: Resource {
-            var cacheKey: String
-            var downloadURL: URL {
-                return .init(string: "https://random.imagecdn.app/500/150")!
-            }
-        }
-        self.pictureImageView.kf.setImage(with: .network(ResouceModel(cacheKey: "\(self.hash)")), placeholder: nil, options: nil, completionHandler: nil)
+    func configCell(_ viewModel: ProductListCellViewModel & DateConvertable) {
+        titleLabel.text = viewModel.title
+        descriptionLabel.text = viewModel.description
+        createTimeLabel.text = viewModel.toString(by: viewModel.createTime)
+        priceLabel.text = viewModel.price
+        pictureImageView.kf.setImage(with: viewModel.image, placeholder: UIImage(named: "warning"), options: nil, completionHandler: nil)
     }
 }

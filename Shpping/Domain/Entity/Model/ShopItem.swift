@@ -6,8 +6,19 @@
 //
 
 import Foundation
+import protocol Kingfisher.Resource
+
+protocol ProductListCellViewModel: AnyObject {
+    var identifier: String { get }
+    var title: String { get }
+    var description: String { get }
+    var price: String { get }
+    var image: Resource { get }
+    var createTime: Date { get }
+}
 
 struct ShopItem {
+    var identifer: String = UUID().uuidString
     var name: String
     var description: String
     var price: Int
