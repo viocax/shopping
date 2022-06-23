@@ -58,6 +58,7 @@
 		0D476F642864630900262974 /* ProductDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F632864630900262974 /* ProductDetailCoordinator.swift */; };
 		0D476F66286464C700262974 /* ProductDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F65286464C700262974 /* ProductDetailViewModelTests.swift */; };
 		0D476F682864661300262974 /* MockShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F672864661300262974 /* MockShopModel.swift */; };
+		0D476F6A286486CF00262974 /* Domain.ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F69286486CF00262974 /* Domain.ProductDetail.swift */; };
 		68B572AEF91307FFA123DE00 /* Pods_Shpping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C483E819FEE5EB16195050EA /* Pods_Shpping.framework */; };
 		D8DA05E9AFDB432E9C010AE4 /* Pods_ShppingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0801337710867C1E6115717B /* Pods_ShppingTests.framework */; };
 		EB96052ACF78F8E6579EF70F /* Pods_Shpping_ShppingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E095D61A9CB735DA13534A /* Pods_Shpping_ShppingUITests.framework */; };
@@ -137,6 +138,7 @@
 		0D476F632864630900262974 /* ProductDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailCoordinator.swift; sourceTree = "<group>"; };
 		0D476F65286464C700262974 /* ProductDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModelTests.swift; sourceTree = "<group>"; };
 		0D476F672864661300262974 /* MockShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockShopModel.swift; sourceTree = "<group>"; };
+		0D476F69286486CF00262974 /* Domain.ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain.ProductDetail.swift; sourceTree = "<group>"; };
 		167C8FD660DEC57BD2A9E826 /* Pods-Shpping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping.debug.xcconfig"; path = "Target Support Files/Pods-Shpping/Pods-Shpping.debug.xcconfig"; sourceTree = "<group>"; };
 		58F3595715F69147EB36DA8D /* Pods-Shpping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping.release.xcconfig"; path = "Target Support Files/Pods-Shpping/Pods-Shpping.release.xcconfig"; sourceTree = "<group>"; };
 		72D47CD5EB359D92B8192C62 /* Pods-ShppingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShppingTests.debug.xcconfig"; path = "Target Support Files/Pods-ShppingTests/Pods-ShppingTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -407,6 +409,7 @@
 			children = (
 				0D476F40286422E500262974 /* Domain.swift */,
 				0D476F572864567B00262974 /* Domain.ProductList.swift */,
+				0D476F69286486CF00262974 /* Domain.ProductDetail.swift */,
 			);
 			path = Implement;
 			sourceTree = "<group>";
@@ -743,6 +746,7 @@
 				0D476F48286426A200262974 /* ProductListEndpoint.swift in Sources */,
 				0D476F34286383C700262974 /* ErrorTracker.swift in Sources */,
 				0D476F2128634AFF00262974 /* OrderCheckingCell.swift in Sources */,
+				0D476F6A286486CF00262974 /* Domain.ProductDetail.swift in Sources */,
 				0D476F2828637D7300262974 /* ViewModelType.swift in Sources */,
 				0D476EFF2862B99700262974 /* ErrorInfo.swift in Sources */,
 				0D476F582864567B00262974 /* Domain.ProductList.swift in Sources */,

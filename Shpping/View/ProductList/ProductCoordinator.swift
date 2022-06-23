@@ -23,7 +23,11 @@ extension ProductCoordinator: ProductCoordinatorProcotol {
                 subscriber.onCompleted()
                 return Disposables.create()
             }
-            let detailView = ProductDetailViewController()
+            let useCase = Domain.ProductDetail(model: model)
+            let coordinator = ProductDetailCoordinator()
+            let viewModel = ProductDetailViewModel(useCase: useCase, coordinator: coordinator)
+            let detailView = ProductDetailViewController(viewModel)
+            coordinator.viewController = detailView
             viewController.navigationController?.pushViewController(detailView, animated: true)
             subscriber.onNext(())
             subscriber.onCompleted()
