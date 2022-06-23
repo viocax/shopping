@@ -11,7 +11,7 @@ import protocol Kingfisher.Resource
 protocol ShopItemsViewModel {
     var identifier: String { get }
     var title: String { get }
-    var description: String { get }
+    var description: String { get set }
     var priceString: String { get }
     var image: Resource { get }
     var createTime: Date { get }

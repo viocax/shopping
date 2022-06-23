@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import RxRelay
+import RxCocoa
+import RxSwift
 
 class ProductDetailViewController: UIViewController {
 
+    private let disposeBag: DisposeBag = .init()
     private let scrollView: UIScrollView = .init()
     private let scrollContainerView: UIView = .init()
     private let borderView: UIView = .init()
@@ -23,11 +27,20 @@ class ProductDetailViewController: UIViewController {
         return UIVisualEffectView(effect: effect)
     }()
     
+    private let viewModel: ProductDetailViewModel
+    init(_ viewModel: ProductDetailViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        mockData()
+        bindView()
         // Do any additional setup after loading the view.
     }
     
@@ -73,7 +86,7 @@ private extension ProductDetailViewController {
         borderView.snp.makeConstraints { make in
             make.size.equalTo(320)
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(80)
+            make.top.equalToSuperview().inset(40)
         }
         borderView.backgroundColor = UIColor.gray.withAlphaComponent(0.2)
         borderView.layer.cornerRadius = 10
@@ -118,10 +131,30 @@ private extension ProductDetailViewController {
         priceLabel.textColor = .black
         priceLabel.textAlignment = .right
     }
-    // FIXME: remove it
-    func mockData() {
-        titleLabel.text = "Test title 1111111"
-        descriptionLabel.text = "skgnfjlksngklsfnglfsngm,sfng,mfnbgm,sbgn,msbgmnsbgmnsfbgmnsgmnsbgnsbfgmnsbgmnsbgmnsbgmnsfbgmnsbfgihihgnlwrnglwrhtlrwn,tbnwr,mtbnwem,btwbtn,webtmnwebtmnwebtmnewbtmnwebtmnwetmnwebtn,webtwebhtkjwhtkwebt,ewnbtmnwebtmnwbtmwbtmnwbtmnwbtmnwbtmnwbtmskgnfjlksngklsfnglfsngm,sfng,mfnbgm,sbgn,msbgmnsbgmnsfbgmnsgmnsbgnsbfgmnsbgmnsbgmnsbgmnsfbgmnsbfgihihgnlwrnglwrhtlrwn,tbnwr,mtbnwem,btwbtn,webtmnwebtmnwebtmnewbtmnwebtmnwetmnwebtn,webtwebhtkjwhtkwebt,ewnbtmnwebtmnwbtmwbtmnwbtmnwbtmnwbtmnwbtmnskgnfjlksngklsfnglfsngm,sfng,mfnbgm,sbgn,msbgmnsbgmnsfbgmnsgmnsbgnsbfgmnsbgmnsbgmnsbgmnsfbgmnsbfgihihgnlwrnglwrhtlrwn,tbnwr,mtbnwem,btwbtn,webtmnwebtmnwebtmnewbtmnwebtmnwetmnwebtn,webtwebhtkjwhtkwebt,ewnbtmnwebtmnwbtmwbtmnwbtmnwbtmnwbtmnwbtmnskgnfjlksngklsfnglfsngm,sfng,mfnbgm,sbgn,msbgmnsbgmnsfbgmnsgmnsbgnsbfgmnsbgmnsbgmnsbgmnsfbgmnsbfgihihgnlwrnglwrhtlrwn,tbnwr,mtbnwem,btwbtn,webtmnwebtmnwebtmnewbtmnwebtmnwetmnwebtn,webtwebhtkjwhtkwebt,ewnbtmnwebtmnwbtmwbtmnwbtmnwbtmnwbtmnwbtmnskgnfjlksngklsfnglfsngm,sfng,mfnbgm,sbgn,msbgmnsbgmnsfbgmnsgmnsbgnsbfgmnsbgmnsbgmnsbgmnsfbgmnsbfgihihgnlwrnglwrhtlrwn,tbnwr,mtbnwem,btwbtn,webtmnwebtmnwebtmnewbtmnwebtmnwetmnwebtn,webtwebhtkjwhtkwebt,ewnbtmnwebtmnwbtmwbtmnwbtmnwbtmnwbtmnwbtmnskgnfjlksngklsfnglfsngm,sfng,mfnbgm,sbgn,msbgmnsbgmnsfbgmnsgmnsbgnsbfgmnsbgmnsbgmnsbgmnsfbgmnsbfgihihgnlwrnglwrhtlrwn,tbnwr,mtbnwem,btwbtn,webtmnwebtmnwebtmnewbtmnwebtmnwetmnwebtn,webtwebhtkjwhtkwebt,ewnbtmnwebtmnwbtmwbtmnwbtmnwbtmnwbtmnwbtmnskgnfjlksngklsfnglfsngm,sfng,mfnbgm,sbgn,msbgmnsbgmnsfbgmnsgmnsbgnsbfgmnsbgmnsbgmnsbgmnsfbgmnsbfgihihgnlwrnglwrhtlrwn,tbnwr,mtbnwem,btwbtn,webtmnwebtmnwebtmnewbtmnwebtmnwetmnwebtn,webtwebhtkjwhtkwebt,ewnbtmnwebtmnwbtmwbtmnwbtmnwbtmnwbtmnwbtmnskgnfjlksngklsfnglfsngm,sfng,mfnbgm,sbgn,msbgmnsbgmnsfbgmnsgmnsbgnsbfgmnsbgmnsbgmnsbgmnsfbgmnsbfgihihgnlwrnglwrhtlrwn,tbnwr,mtbnwem,btwbtn,webtmnwebtmnwebtmnewbtmnwebtmnwetmnwebtn,webtwebhtkjwhtkwebt,ewnbtmnwebtmnwbtmwbtmnwbtmnwbtmnwbtmnwbtmnn"
-        priceLabel.text = "$qrqwer"
+    func bindView() {
+        let bindView = PublishRelay<Void>()
+        defer { bindView.accept(()) }
+
+        let input = ProductDetailViewModel
+            .Input(
+                addToChat: addToChartButton.rx.tap.asDriver(),
+                purchase: purchaseButton.rx.tap.asDriver(),
+                bindView: bindView.asDriverOnErrorJustComplete()
+            )
+        let output = viewModel.transform(input)
+        output.configuration
+            .drive()
+            .disposed(by: disposeBag)
+        output.displayModel
+            .drive(viewDisplay)
+            .disposed(by: disposeBag)
+    }
+    var viewDisplay: Binder<ShopItemsViewModel> {
+        return Binder(self) { vc, model in
+            vc.pictureImageView.kf.setImage(with: model.image, placeholder: UIImage(named: "warning"), options: nil, completionHandler: nil)
+            vc.titleLabel.text = model.title
+            vc.descriptionLabel.text = model.description
+            vc.priceLabel.text = model.priceString
+        }
     }
 }

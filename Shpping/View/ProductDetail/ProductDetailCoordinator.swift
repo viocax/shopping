@@ -20,10 +20,30 @@ final class ProductDetailCoordinator {
 extension ProductDetailCoordinator: ProductDetailCoordinatorProtocol {
 
     func showChartView() -> Observable<Void> {
-        return .empty()
+        return .create { [weak self] subscriber in
+            guard let navigation = self?.viewController?.navigationController else {
+                subscriber.onCompleted()
+                return Disposables.create()
+            }
+            let chartView = ChartViewController()
+            navigation.pushViewController(chartView, animated: true)
+            subscriber.onNext(())
+            subscriber.onCompleted()
+            return Disposables.create()
+        }
     }
     
     func showOrderCheckingView(_ model: ShopItemsViewModel) -> Observable<Void> {
-        return .empty()
+        return .create { [weak self] subscriber in
+            guard let navigation = self?.viewController?.navigationController else {
+                subscriber.onCompleted()
+                return Disposables.create()
+            }
+            let orderView = OrderCheckingViewController()
+            navigation.pushViewController(orderView, animated: true)
+            subscriber.onNext(())
+            subscriber.onCompleted()
+            return Disposables.create()
+        }
     }
 }
