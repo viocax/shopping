@@ -6,6 +6,13 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+
+protocol ChartViewCellViewModel: AnyObject {
+    var info: ShopItemsViewModel { get }
+    var isSelected: Bool { get set }
+}
 
 class ChartTableViewCell: UITableViewCell {
 
@@ -68,10 +75,15 @@ private extension ChartTableViewCell {
 // MARK: Public
 extension ChartTableViewCell {
     // FIXME: interface
-    func config() {
-        titleLabel.text = "jsdgklsndgls"
-        priceLabel.text = "$lsdakngf"
-        pictureImageView.image = .init(named: "test")
-        checkBarView.image = Bool.random() ? .init(named: "check") : .init(named: "uncheck")
+    func config(viewModel: ChartViewCellViewModel) {
+        titleLabel.text = viewModel.info.title
+        priceLabel.text = viewModel.info.priceString
+        pictureImageView.kf.setImage(with: viewModel.info.image, placeholder: UIImage(named: "warning"), options: nil, completionHandler: nil)
+        isCheck.onNext(viewModel.isSelected)
+    }
+    var isCheck: Binder<Bool> {
+        return .init(checkBarView) { view, isCheck in
+            view.image = isCheck ? .init(named: "check") : .init(named: "uncheck")
+        }
     }
 }

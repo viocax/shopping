@@ -25,7 +25,11 @@ extension ProductDetailCoordinator: ProductDetailCoordinatorProtocol {
                 subscriber.onCompleted()
                 return Disposables.create()
             }
-            let chartView = ChartViewController()
+            let useCase = Domain.Chart()
+            let coordinator = ChartViewCoordinator()
+            let viewModel = ChartViewModel(useCase: useCase, coordinator: coordinator)
+            let chartView = ChartViewController(viewModel: viewModel)
+            coordinator.viewController = chartView
             navigation.pushViewController(chartView, animated: true)
             subscriber.onNext(())
             subscriber.onCompleted()

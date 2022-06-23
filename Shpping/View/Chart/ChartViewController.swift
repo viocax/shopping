@@ -20,7 +20,17 @@ class ChartViewController: UIViewController {
         let effect = UIBlurEffect(style: .extraLight)
         return UIVisualEffectView(effect: effect)
     }()
+    private let viewModel: ChartViewModel
 
+    init(viewModel: ChartViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,17 +85,30 @@ private extension ChartViewController {
         titleLabel.text = "購物車"
     }
     func bindView() {
-        typealias CellForRowAt = (UITableView, Int, String) -> UITableViewCell
+        typealias CellForRowAt = (UITableView, Int, ChartViewCellViewModel) -> UITableViewCell
         let cellForRowAt: CellForRowAt = { tableView, row, model in
             guard let cell = tableView.dequeueReusableCell(ChartTableViewCell.self, indexPath: .init(row: row, section: .zero)) else {
                 return .init()
             }
-            cell.config()
+            cell.config(viewModel: model)
             return cell
         }
-        Driver.just((0...10).map(String.init))
+        let bindView = PublishRelay<Void>()
+        defer { bindView.accept(()) }
+        let tapCell = tableView.rx
+            .modelSelected(ChartViewCellViewModel.self)
+            .asDriver()
+        let input = ChartViewModel
+            .Input(
+                bindView: bindView.asDriverOnErrorJustComplete(),
+                tapCell: tapCell
+            )
+        let output = viewModel.transform(input)
+        output.list
             .drive(tableView.rx.items)(cellForRowAt)
             .disposed(by: disposeBag)
-
+        output.isEnablePurchase
+            .drive(confirmButton.rx.isEnabled)
+            .disposed(by: disposeBag)
     }
 }

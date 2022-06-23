@@ -32,6 +32,8 @@ extension ProductDetailViewModel: ViewModelType {
             .map { self.useCase.getCurrentShopItem() }
 
         let gotoChartView = input.addToChat
+            .withLatestFrom(displayModel)
+            .map(useCase.addToChart(_:))
             .flatMap {
                 return self.coordinator.showChartView()
                     .asDriverOnErrorJustComplete()

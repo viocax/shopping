@@ -9,4 +9,5 @@ import Foundation
 
 protocol ProductDetailUseCase {
     func getCurrentShopItem() -> ShopItemsViewModel
+    func addToChart(_ item: ShopItemsViewModel)
 }

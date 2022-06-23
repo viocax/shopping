@@ -34,6 +34,9 @@ class ProductDetailViewModelTests: XCTestCase {
 
         let mockModel = MockShopModel(999)
         mockUseCase.injectShopItems = mockModel
+        mockUseCase.injectAddToChart = { model in
+            XCTAssertEqual(mockModel.identifier, model.identifier)
+        }
 
         // MARK: Bind view event
         let bindView = testScheduler.createColdObservable([
