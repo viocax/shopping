@@ -9,11 +9,16 @@ import Foundation
 import protocol Kingfisher.Resource
 
 struct RandomImageInfo: Resource {
-    var cacheKey: String = UUID().uuidString
+    var cacheKey: String
+    private let urlString: String
     var downloadURL: URL {
-        guard let url = URL(string: "https://random.imagecdn.app/500/150") else {
+        guard let url = URL(string: urlString) else {
             fatalError("checking")
         }
         return url
+    }
+    init(urlString: String, _ key: String = UUID().uuidString) {
+        self.cacheKey = key
+        self.urlString = urlString.isEmpty ? "https://random.imagecdn.app/500/150" : urlString
     }
 }

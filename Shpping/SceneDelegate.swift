@@ -18,7 +18,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window: UIWindow = .init(windowScene: windowScene)
-        window.rootViewController = HistoryOrderViewController()
+        let useCase = Domain.ProductList()
+        let coordinator = ProductCoordinator()
+        let viewModel = ProductListViewModel(useCase: useCase, coordiantor: coordinator)
+        let viewController = ProductListViewController(viewModel: viewModel)
+        let navigation = UINavigationController(rootViewController: viewController)
+        coordinator.viewCotroller = viewController
+        window.rootViewController = navigation
         window.makeKeyAndVisible()
         self.window = window
     }

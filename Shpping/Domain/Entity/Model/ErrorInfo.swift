@@ -13,7 +13,7 @@ struct ErrorInfo: Error, Equatable {
 }
 
 enum ErrorCase: Error {
-    case decodeError, unspport
+    case decodeError, unspport, pathMissing
 }
 
 

@@ -19,8 +19,8 @@ class ProductListViewModelTests: XCTestCase {
         var identifier: String = UUID().uuidString
         var title: String = ""
         var description: String = ""
-        var price: String = ""
-        var image: Resource = RandomImageInfo()
+        var priceString: String = ""
+        var image: Resource = RandomImageInfo(urlString: "")
         var createTime: Date = .init()
         init(_ id: Int) {
             self.title = "Test: \(id)"

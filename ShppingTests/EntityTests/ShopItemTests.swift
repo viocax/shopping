@@ -16,7 +16,7 @@ class ShopItemTests: XCTestCase {
         {
             "name": "Jie",
             "description": "test 1",
-            "createTime": \(mockDate.timeIntervalSince1970),
+            "create_Time": \(mockDate.timeIntervalSince1970),
             "price": 999,
             "picture": "https://random.imagecdn.app/500/150"
         }
@@ -25,7 +25,7 @@ class ShopItemTests: XCTestCase {
             let model = try decoder.decode(ShopItem.self, from: .init(okString))
             XCTAssertEqual(model.name, "Jie")
             XCTAssertEqual(model.description, "test 1")
-            XCTAssertEqual(model.createTime, mockDate.timeIntervalSince1970)
+            XCTAssertEqual(model.create_Time, mockDate.timeIntervalSince1970)
             XCTAssertEqual(model.price, 999)
             XCTAssertEqual(model.picture, "https://random.imagecdn.app/500/150")
         } catch {
