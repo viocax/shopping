@@ -29,7 +29,8 @@ extension OrderCheckingViewModel: ViewModelType {
         let clickCheckOut: Driver<Void>
     }
     struct Output {
-        let list: Driver<[ChartViewCellViewModel]>
+        let footer: Driver<OrderCellDisplayModel>
+        let list: Driver<[OrderCellDisplayModel]>
         let isLoading: Driver<Bool>
         let configuration: Driver<Void>
     }
@@ -50,6 +51,8 @@ extension OrderCheckingViewModel: ViewModelType {
                     .trackActivity(hudTracker)
                     .asDriverOnErrorJustComplete()
             }
+        let footer = list
+            .map(useCase.getFooterInfo(_:))
 
         let configuration = Driver
             .merge(
@@ -57,6 +60,7 @@ extension OrderCheckingViewModel: ViewModelType {
             )
 
         return .init(
+            footer: footer,
             list: list,
             isLoading: hudTracker.asDriver(),
             configuration: configuration

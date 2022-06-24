@@ -8,15 +8,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import protocol Kingfisher.Resource
-
-protocol ChartViewCellViewModel {
-    var id: String { get }
-    var image: Resource { get }
-    var title: String { get }
-    var price: String { get }
-    var isSelected: Bool { get set }
-}
 
 class ChartTableViewCell: UITableViewCell {
 

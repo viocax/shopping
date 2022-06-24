@@ -16,7 +16,6 @@ extension Reactive where Base: UIView {
     }
 }
 
-
 private extension Jie where T: UIView {
     func start() {
         let indicatorView: IndicatorView

@@ -14,10 +14,14 @@ extension Domain {
 }
 
 extension Domain.OrderChecking: OrderCheckingUseCase {
+    func getFooterInfo(_ allItems: [OrderCellDisplayModel]) -> OrderCellDisplayModel {
+        fatalError()
+    }
+    
     func checkOut() -> Observable<Void> {
         return .empty()
     }
-    func getItemsToCheckOut() -> Observable<[ChartViewCellViewModel]> {
+    func getItemsToCheckOut() -> Observable<[OrderCellDisplayModel]> {
         return .empty()
     }
 }
