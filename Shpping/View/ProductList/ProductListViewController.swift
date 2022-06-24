@@ -57,6 +57,7 @@ private extension ProductListViewController {
         tableView.estimatedRowHeight = 80
         tableView.separatorStyle = .none
         tableView.refreshControl = pullRefreshControl
+        tableView.backgroundView = EmptyView()
         setBarBlur()
         title = "商品"
     }
@@ -102,9 +103,6 @@ private extension ProductListViewController {
         output.list.map { _ in }
             .drive(endRefreshingIfNeed)
             .disposed(by: disposeBag)
-        output.isEmpty
-            .drive(view.rx.isShowEmptyView)
-            .disposed(by: disposeBag)
         output.error
             .drive() // TODO: add error view
             .disposed(by: disposeBag)
@@ -129,16 +127,5 @@ extension ProductListViewController: UIScrollViewDelegate {
     }
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         detectScrollToBottomEdge(scrollView)
-    }
-}
-
-extension UIViewController {
-    func setBarBlur() {
-        guard let navigationVC = navigationController else {
-            return
-        }
-        let barAppearance = UINavigationBarAppearance()
-        navigationVC.navigationBar.standardAppearance = barAppearance
-        navigationVC.navigationBar.scrollEdgeAppearance = barAppearance
     }
 }

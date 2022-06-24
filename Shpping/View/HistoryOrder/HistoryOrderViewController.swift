@@ -62,6 +62,7 @@ private extension HistoryOrderViewController {
             .rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 60
         tableView.separatorStyle = .none
+        tableView.backgroundView = EmptyView()
         tableView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
             make.top.equalTo(titleLabel.snp.bottom).offset(8)
@@ -95,9 +96,6 @@ private extension HistoryOrderViewController {
             .disposed(by: disposeBag)
         output.configuration
             .drive()
-            .disposed(by: disposeBag)
-        output.isEmpty
-            .drive(view.rx.isShowEmptyView)
             .disposed(by: disposeBag)
     }
 }

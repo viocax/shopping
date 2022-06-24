@@ -79,6 +79,7 @@
 		0D476F91286577A800262974 /* OrderChekingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F90286577A800262974 /* OrderChekingCoordinator.swift */; };
 		0D476F93286578C400262974 /* Domain.OrderChecking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F92286578C400262974 /* Domain.OrderChecking.swift */; };
 		0D476F9528658F7200262974 /* OrderCheckingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F9428658F7200262974 /* OrderCheckingViewModelTests.swift */; };
+		0D8DBE872865CA5E00FD4819 /* UIViewController+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8DBE862865CA5E00FD4819 /* UIViewController+Appearance.swift */; };
 		68B572AEF91307FFA123DE00 /* Pods_Shpping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C483E819FEE5EB16195050EA /* Pods_Shpping.framework */; };
 		D8DA05E9AFDB432E9C010AE4 /* Pods_ShppingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0801337710867C1E6115717B /* Pods_ShppingTests.framework */; };
 		EB96052ACF78F8E6579EF70F /* Pods_Shpping_ShppingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E095D61A9CB735DA13534A /* Pods_Shpping_ShppingUITests.framework */; };
@@ -179,6 +180,7 @@
 		0D476F90286577A800262974 /* OrderChekingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderChekingCoordinator.swift; sourceTree = "<group>"; };
 		0D476F92286578C400262974 /* Domain.OrderChecking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain.OrderChecking.swift; sourceTree = "<group>"; };
 		0D476F9428658F7200262974 /* OrderCheckingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCheckingViewModelTests.swift; sourceTree = "<group>"; };
+		0D8DBE862865CA5E00FD4819 /* UIViewController+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Appearance.swift"; sourceTree = "<group>"; };
 		167C8FD660DEC57BD2A9E826 /* Pods-Shpping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping.debug.xcconfig"; path = "Target Support Files/Pods-Shpping/Pods-Shpping.debug.xcconfig"; sourceTree = "<group>"; };
 		58F3595715F69147EB36DA8D /* Pods-Shpping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping.release.xcconfig"; path = "Target Support Files/Pods-Shpping/Pods-Shpping.release.xcconfig"; sourceTree = "<group>"; };
 		72D47CD5EB359D92B8192C62 /* Pods-ShppingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShppingTests.debug.xcconfig"; path = "Target Support Files/Pods-ShppingTests/Pods-ShppingTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -388,6 +390,7 @@
 				0D476F372863840A00262974 /* Reactive+UIViewController.swift */,
 				0D476F842865647200262974 /* Date+String.swift */,
 				0D476F862865648500262974 /* Int+String.swift */,
+				0D8DBE862865CA5E00FD4819 /* UIViewController+Appearance.swift */,
 				0D476F112862C20200262974 /* extension+UITableView.swift */,
 				0D476F5128643EFD00262974 /* Reacitve+UIView.swift */,
 			);
@@ -835,6 +838,7 @@
 				0D476F7428649F5B00262974 /* Domain.Chart.swift in Sources */,
 				0D476EBF286222E600262974 /* SceneDelegate.swift in Sources */,
 				0D476F2A28637E1500262974 /* ProductListViewModel.swift in Sources */,
+				0D8DBE872865CA5E00FD4819 /* UIViewController+Appearance.swift in Sources */,
 				0D476F382863840A00262974 /* Reactive+UIViewController.swift in Sources */,
 				0D476F122862C20200262974 /* extension+UITableView.swift in Sources */,
 				0D476F5428643F3000262974 /* Jie.swift in Sources */,
