@@ -14,11 +14,6 @@ extension Reactive where Base: UIView {
             isLoading ? targetView.jie.start() : targetView.jie.stop()
         }
     }
-    var isShowEmptyView: Binder<Bool> {
-        return Binder(self.base) { targeView, isShow in
-            isShow ? targeView.jie.showEmptyView() : targeView.jie.hideEmptyView()
-        }
-    }
 }
 
 
@@ -42,16 +37,5 @@ private extension Jie where T: UIView {
         let indicator = self.base.subviews.first(where: { $0 is IndicatorView }) as? IndicatorView
         indicator?.stopAnimation()
         indicator?.removeFromSuperview()
-    }
-    func showEmptyView() {
-        hideEmptyView()
-        let view = EmptyView()
-        self.base.addSubview(view)
-        view.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-    }
-    func hideEmptyView() {
-        self.base.subviews.first(where: { $0 is EmptyView })?.removeFromSuperview()
     }
 }

@@ -138,10 +138,6 @@ class ProductListViewModelTests: XCTestCase {
         output.error
             .drive(observerError)
             .disposed(by: disposeBag)
-        let observerIsEmpty = testScheduler.createObserver(Bool.self)
-        output.isEmpty
-            .drive(observerIsEmpty)
-            .disposed(by: disposeBag)
 
         // MARK: Expectaction
         let expectList: [Recorded<Event<[ShopItemsViewModel]>>] = [
@@ -163,16 +159,10 @@ class ProductListViewModelTests: XCTestCase {
         let expectError: [Recorded<Event<ErrorInfo>>] = [
             .next(400, mockError)
         ]
-        let expectEmpty: [Recorded<Event<Bool>>] = [
-            .next(100, false),
-            .next(200, true),
-            .next(300, false)
-        ]
 
         testScheduler.start()
 
         XCTAssertEqual(expectIsLoading, observerIsLoading.events)
-        XCTAssertEqual(expectEmpty, observerIsEmpty.events)
         XCTAssertEqual(expectError, observerError.events)
         let expectModels = expectList.compactMap(\.value.element)
         let resultModels = observerList.events.compactMap(\.value.element)

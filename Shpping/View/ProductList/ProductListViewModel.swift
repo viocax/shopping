@@ -34,7 +34,6 @@ extension ProductListViewModel: ViewModelType {
     struct Output {
         let list: Driver<[ShopItemsViewModel]>
         let isLoading: Driver<Bool>
-        let isEmpty: Driver<Bool>
         let error: Driver<ErrorInfo>
         let confirguration: Driver<Void>
     }
@@ -42,7 +41,11 @@ extension ProductListViewModel: ViewModelType {
         let errorTracker = ErrorTracker()
         let hudTracker = HUDTracker()
 
-        let pullRefresh = input.pullRefresh
+        let resetPageToFetch = Driver
+            .merge(
+                input.pullRefresh,
+                input.viewWillAppear
+            )
             .flatMap { _ in
                 return self.useCase.resetPageCount()
                     .asDriverOnErrorJustComplete()
@@ -54,9 +57,8 @@ extension ProductListViewModel: ViewModelType {
             }
         let outputList = Driver
             .merge(
-                pullRefresh,
-                loadingMore,
-                input.viewWillAppear
+                resetPageToFetch,
+                loadingMore
             )
             .flatMap {
                 return self.useCase.getShoppingList()
@@ -65,10 +67,6 @@ extension ProductListViewModel: ViewModelType {
                     .asDriverOnErrorJustComplete()
             }
 
-        let isEmpty = outputList
-            .map(\.isEmpty)
-            .distinctUntilChanged()
-        
         let toDetailPage = input.clickProduct
             .flatMap { clickedItem in
                 return self.coordinator.showDetailPage(clickedItem)
@@ -90,7 +88,6 @@ extension ProductListViewModel: ViewModelType {
         return .init(
             list: outputList,
             isLoading: hudTracker.asDriver(),
-            isEmpty: isEmpty,
             error: errorTracker.asDriver(),
             confirguration: configuration
         )
