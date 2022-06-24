@@ -92,8 +92,19 @@ class OrderCheckingViewModelTests: XCTestCase {
                 bindView: triggerBindView.asDriverOnErrorJustComplete(),
                 clickCheckOut: .empty()
             )
-        let mockModel: [ChartViewCellViewModel] = (0...10).map(Model.init)
+        let mockModel: [OrderCellDisplayModel] = (0...10).map(Model.init)
+        let mockFooterModel = Model(id: 99999)
         mockUseCase.injectGetItemsToCheckOut = .just(mockModel)
+        mockUseCase.injectFooterModel = { getAllOrder in
+            zip(getAllOrder, mockModel).forEach { getted, mock in
+                XCTAssertEqual(getted.price, mock.price)
+                XCTAssertEqual(getted.title, mock.title)
+                XCTAssertEqual(getted.id, mock.id)
+                XCTAssertEqual(getted.image.cacheKey, mock.image.cacheKey)
+                XCTAssertEqual(getted.image.downloadURL, mock.image.downloadURL)
+            }
+            return mockFooterModel
+        }
         let output = viewModel.transform(input)
 
         let bindview = testScheduler.createColdObservable([
@@ -103,13 +114,22 @@ class OrderCheckingViewModelTests: XCTestCase {
 
         bindview.bind(to: triggerBindView)
             .disposed(by: disposeBag)
-        let expectlist: [Recorded<Event<[ChartViewCellViewModel]>>] = [
+        let expectlist: [Recorded<Event<[OrderCellDisplayModel]>>] = [
             .next(200, mockModel),
             .next(300, mockModel)
         ]
-        let observerList = testScheduler.createObserver([ChartViewCellViewModel].self)
+        let observerList = testScheduler.createObserver([OrderCellDisplayModel].self)
         output.list
             .drive(observerList)
+            .disposed(by: disposeBag)
+
+        let expectFooter: [Recorded<Event<OrderCellDisplayModel>>] = [
+            .next(200, mockFooterModel),
+            .next(300, mockFooterModel)
+        ]
+        let observerFooter = testScheduler.createObserver(OrderCellDisplayModel.self)
+        output.footer
+            .drive(observerFooter)
             .disposed(by: disposeBag)
 
         let expectIsLoading: [Recorded<Event<Bool>>] = [
@@ -125,6 +145,19 @@ class OrderCheckingViewModelTests: XCTestCase {
             .disposed(by: disposeBag)
 
         testScheduler.start()
+
+        XCTAssertEqual(expectFooter.map(\.time), observerFooter.events.map(\.time))
+        zip(
+            expectFooter.compactMap(\.value.element),
+            observerFooter.events.compactMap(\.value.element)
+        ).forEach { expect, result in
+            XCTAssertEqual(expect.id, result.id)
+            XCTAssertEqual(expect.title, result.title)
+            XCTAssertEqual(expect.price, result.price)
+            XCTAssertEqual(expect.image.cacheKey, result.image.cacheKey)
+            XCTAssertEqual(expect.image.downloadURL, result.image.downloadURL)
+        }
+        
         XCTAssertEqual(expectIsLoading, observerIsLoading.events)
         XCTAssertEqual(
             expectlist.map(\.time),

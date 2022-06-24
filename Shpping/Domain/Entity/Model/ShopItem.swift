@@ -8,15 +8,6 @@
 import Foundation
 import protocol Kingfisher.Resource
 
-protocol ShopItemsViewModel {
-    var identifier: String { get set }
-    var title: String { get }
-    var description: String { get set }
-    var price: Int { get }
-    var image: Resource { get }
-    var createTime: Date { get }
-}
-
 struct ShopItem {
     var identifier: String = UUID().uuidString
     var name: String
@@ -38,7 +29,7 @@ extension ShopItem: Codable {
     }
 }
 
-
+// MARK: ShopItemsViewModel
 extension ShopItem: ShopItemsViewModel {
     var title: String {
         return self.name

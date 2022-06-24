@@ -63,8 +63,12 @@ class MockUseCase: UseCase {
         return injectCheckOut
     }
 
-    var injectGetItemsToCheckOut: Observable<[ChartViewCellViewModel]> = .empty()
-    func getItemsToCheckOut() -> Observable<[ChartViewCellViewModel]> {
+    var injectGetItemsToCheckOut: Observable<[OrderCellDisplayModel]> = .empty()
+    func getItemsToCheckOut() -> Observable<[OrderCellDisplayModel]> {
         return injectGetItemsToCheckOut
+    }
+    var injectFooterModel: (([OrderCellDisplayModel]) -> OrderCellDisplayModel)?
+    func getFooterInfo(_ allItems: [OrderCellDisplayModel]) -> OrderCellDisplayModel {
+        return injectFooterModel!(allItems)
     }
 }
