@@ -78,6 +78,7 @@
 		0D476F8F2865779500262974 /* OrderCheckingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F8E2865779500262974 /* OrderCheckingUseCase.swift */; };
 		0D476F91286577A800262974 /* OrderChekingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F90286577A800262974 /* OrderChekingCoordinator.swift */; };
 		0D476F93286578C400262974 /* Domain.OrderChecking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F92286578C400262974 /* Domain.OrderChecking.swift */; };
+		0D476F9528658F7200262974 /* OrderCheckingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F9428658F7200262974 /* OrderCheckingViewModelTests.swift */; };
 		68B572AEF91307FFA123DE00 /* Pods_Shpping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C483E819FEE5EB16195050EA /* Pods_Shpping.framework */; };
 		D8DA05E9AFDB432E9C010AE4 /* Pods_ShppingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0801337710867C1E6115717B /* Pods_ShppingTests.framework */; };
 		EB96052ACF78F8E6579EF70F /* Pods_Shpping_ShppingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E095D61A9CB735DA13534A /* Pods_Shpping_ShppingUITests.framework */; };
@@ -177,6 +178,7 @@
 		0D476F8E2865779500262974 /* OrderCheckingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCheckingUseCase.swift; sourceTree = "<group>"; };
 		0D476F90286577A800262974 /* OrderChekingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderChekingCoordinator.swift; sourceTree = "<group>"; };
 		0D476F92286578C400262974 /* Domain.OrderChecking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain.OrderChecking.swift; sourceTree = "<group>"; };
+		0D476F9428658F7200262974 /* OrderCheckingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCheckingViewModelTests.swift; sourceTree = "<group>"; };
 		167C8FD660DEC57BD2A9E826 /* Pods-Shpping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping.debug.xcconfig"; path = "Target Support Files/Pods-Shpping/Pods-Shpping.debug.xcconfig"; sourceTree = "<group>"; };
 		58F3595715F69147EB36DA8D /* Pods-Shpping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping.release.xcconfig"; path = "Target Support Files/Pods-Shpping/Pods-Shpping.release.xcconfig"; sourceTree = "<group>"; };
 		72D47CD5EB359D92B8192C62 /* Pods-ShppingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShppingTests.debug.xcconfig"; path = "Target Support Files/Pods-ShppingTests/Pods-ShppingTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -481,6 +483,7 @@
 			isa = PBXGroup;
 			children = (
 				0D476F392863845500262974 /* ProductListViewModelTests.swift */,
+				0D476F9428658F7200262974 /* OrderCheckingViewModelTests.swift */,
 				0D476F82286558AA00262974 /* HistoryOrderViewModelTests.swift */,
 				0D476F6D2864900900262974 /* ChartViewModelTests.swift */,
 				0D476F65286464C700262974 /* ProductDetailViewModelTests.swift */,
@@ -847,6 +850,7 @@
 			files = (
 				0D476F052862B9CC00262974 /* OrderTests.swift in Sources */,
 				0D476F6E2864900900262974 /* ChartViewModelTests.swift in Sources */,
+				0D476F9528658F7200262974 /* OrderCheckingViewModelTests.swift in Sources */,
 				0D476F3E2864117700262974 /* MockCoordinator.swift in Sources */,
 				0D476F5E2864570300262974 /* MockService.swift in Sources */,
 				0D476F042862B9CC00262974 /* ShopItemTests.swift in Sources */,

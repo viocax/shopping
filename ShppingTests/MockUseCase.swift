@@ -9,7 +9,7 @@ import XCTest
 @testable import Shpping
 @testable import RxSwift
 
-typealias UseCase = ProductListUseCase & ProductDetailUseCase & ChartUseCase & HistoryOrderUseCase
+typealias UseCase = ProductListUseCase & ProductDetailUseCase & ChartUseCase & HistoryOrderUseCase & OrderCheckingUseCase
 
 class MockUseCase: UseCase {
 
@@ -56,5 +56,15 @@ class MockUseCase: UseCase {
     var injectGetHistoryList: Observable<[ShopItemsViewModel]> = .empty()
     func getHistoryList() -> Observable<[ShopItemsViewModel]> {
         return injectGetHistoryList
+    }
+
+    var injectCheckOut: Observable<Void> = .empty()
+    func checkOut() -> Observable<Void> {
+        return injectCheckOut
+    }
+
+    var injectGetItemsToCheckOut: Observable<[ChartViewCellViewModel]> = .empty()
+    func getItemsToCheckOut() -> Observable<[ChartViewCellViewModel]> {
+        return injectGetItemsToCheckOut
     }
 }
