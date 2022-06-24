@@ -37,4 +37,9 @@ class MockCoordinator: Coordinator  {
     func dismiss() -> Observable<Void> {
         return injectDismiss
     }
+
+    var injectShowHistoryView: Observable<Void> = .empty()
+    func showHistoryView() -> Observable<Void> {
+        return injectShowHistoryView
+    }
 }

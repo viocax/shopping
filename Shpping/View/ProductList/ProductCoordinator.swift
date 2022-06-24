@@ -10,6 +10,7 @@ import RxSwift
 
 protocol ProductCoordinatorProcotol {
     func showDetailPage(_ model: ShopItemsViewModel) -> Observable<Void>
+    func showHistoryView() -> Observable<Void>
 }
 
 final class ProductCoordinator {
@@ -33,5 +34,8 @@ extension ProductCoordinator: ProductCoordinatorProcotol {
             subscriber.onCompleted()
             return Disposables.create()
         }
+    }
+    func showHistoryView() -> Observable<Void> {
+        return .empty()
     }
 }

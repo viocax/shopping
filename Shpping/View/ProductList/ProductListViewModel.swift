@@ -23,6 +23,7 @@ extension ProductListViewModel: ViewModelType {
         let viewWillAppear: Driver<Void>
         let pullRefresh: Driver<Void>
         let loadingMore: Driver<Void>
+        let clickHistory: Driver<Void>
         let clickProduct: Driver<ShopItemsViewModel>
     }
     struct Output {
@@ -69,9 +70,16 @@ extension ProductListViewModel: ViewModelType {
                     .asDriverOnErrorJustComplete()
             }
 
+        let toHistoryPage = input.clickHistory
+            .flatMap {
+                return self.coordinator.showHistoryView()
+                    .asDriverOnErrorJustComplete()
+            }
+
         let configuration = Driver
             .merge(
-                toDetailPage
+                toDetailPage,
+                toHistoryPage
             )
 
         return .init(
