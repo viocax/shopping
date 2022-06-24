@@ -11,7 +11,11 @@ import RxCocoa
 final class ChartViewModel {
     private let useCase: ChartUseCase
     private let coordinator: ChartViewCoordinatorProtocol
-    init(useCase: ChartUseCase, coordinator: ChartViewCoordinatorProtocol) {
+
+    init(
+        useCase: ChartUseCase,
+        coordinator: ChartViewCoordinatorProtocol
+    ) {
         self.useCase = useCase
         self.coordinator = coordinator
     }
