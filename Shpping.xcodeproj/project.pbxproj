@@ -67,6 +67,10 @@
 		0D476F772864A27F00262974 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F762864A27F00262974 /* Repository.swift */; };
 		0D476F792864A36000262974 /* ProductDetailUseCaseTessts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F782864A36000262974 /* ProductDetailUseCaseTessts.swift */; };
 		0D476F7B2864A37600262974 /* MockRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F7A2864A37600262974 /* MockRepo.swift */; };
+		0D476F7D2865571000262974 /* HistoryOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F7C2865571000262974 /* HistoryOrderViewModel.swift */; };
+		0D476F7F286557EB00262974 /* HistoryOrderUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F7E286557EB00262974 /* HistoryOrderUseCase.swift */; };
+		0D476F81286557FE00262974 /* HistoryOrderCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F80286557FE00262974 /* HistoryOrderCoordinator.swift */; };
+		0D476F83286558AA00262974 /* HistoryOrderViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F82286558AA00262974 /* HistoryOrderViewModelTests.swift */; };
 		68B572AEF91307FFA123DE00 /* Pods_Shpping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C483E819FEE5EB16195050EA /* Pods_Shpping.framework */; };
 		D8DA05E9AFDB432E9C010AE4 /* Pods_ShppingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0801337710867C1E6115717B /* Pods_ShppingTests.framework */; };
 		EB96052ACF78F8E6579EF70F /* Pods_Shpping_ShppingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E095D61A9CB735DA13534A /* Pods_Shpping_ShppingUITests.framework */; };
@@ -155,6 +159,10 @@
 		0D476F762864A27F00262974 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		0D476F782864A36000262974 /* ProductDetailUseCaseTessts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailUseCaseTessts.swift; sourceTree = "<group>"; };
 		0D476F7A2864A37600262974 /* MockRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepo.swift; sourceTree = "<group>"; };
+		0D476F7C2865571000262974 /* HistoryOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOrderViewModel.swift; sourceTree = "<group>"; };
+		0D476F7E286557EB00262974 /* HistoryOrderUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOrderUseCase.swift; sourceTree = "<group>"; };
+		0D476F80286557FE00262974 /* HistoryOrderCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOrderCoordinator.swift; sourceTree = "<group>"; };
+		0D476F82286558AA00262974 /* HistoryOrderViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOrderViewModelTests.swift; sourceTree = "<group>"; };
 		167C8FD660DEC57BD2A9E826 /* Pods-Shpping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping.debug.xcconfig"; path = "Target Support Files/Pods-Shpping/Pods-Shpping.debug.xcconfig"; sourceTree = "<group>"; };
 		58F3595715F69147EB36DA8D /* Pods-Shpping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping.release.xcconfig"; path = "Target Support Files/Pods-Shpping/Pods-Shpping.release.xcconfig"; sourceTree = "<group>"; };
 		72D47CD5EB359D92B8192C62 /* Pods-ShppingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShppingTests.debug.xcconfig"; path = "Target Support Files/Pods-ShppingTests/Pods-ShppingTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -319,6 +327,8 @@
 			children = (
 				0D476F242863789900262974 /* Component */,
 				0D476F222863777000262974 /* HistoryOrderViewController.swift */,
+				0D476F80286557FE00262974 /* HistoryOrderCoordinator.swift */,
+				0D476F7C2865571000262974 /* HistoryOrderViewModel.swift */,
 			);
 			path = HistoryOrder;
 			sourceTree = "<group>";
@@ -347,6 +357,7 @@
 				0D476F3F286422D100262974 /* Implement */,
 				0D476F312863836D00262974 /* ProductListUseCase.swift */,
 				0D476F6F286490C500262974 /* ChartUseCase.swift */,
+				0D476F7E286557EB00262974 /* HistoryOrderUseCase.swift */,
 				0D476F61286462F300262974 /* ProductDetailUseCase.swift */,
 			);
 			path = UseCase;
@@ -450,6 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				0D476F392863845500262974 /* ProductListViewModelTests.swift */,
+				0D476F82286558AA00262974 /* HistoryOrderViewModelTests.swift */,
 				0D476F6D2864900900262974 /* ChartViewModelTests.swift */,
 				0D476F65286464C700262974 /* ProductDetailViewModelTests.swift */,
 			);
@@ -753,10 +765,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D476F81286557FE00262974 /* HistoryOrderCoordinator.swift in Sources */,
 				0D476F1C2863168800262974 /* ChartTableViewCell.swift in Sources */,
 				0D476F322863836D00262974 /* ProductListUseCase.swift in Sources */,
 				0D476F62286462F300262974 /* ProductDetailUseCase.swift in Sources */,
 				0D476F72286490E500262974 /* ChartViewCoordinator.swift in Sources */,
+				0D476F7D2865571000262974 /* HistoryOrderViewModel.swift in Sources */,
 				0D476EC1286222E600262974 /* ViewController.swift in Sources */,
 				0D476F6028645D7E00262974 /* ProductDetailViewModel.swift in Sources */,
 				0D476F772864A27F00262974 /* Repository.swift in Sources */,
@@ -773,6 +787,7 @@
 				0D476F1E2863460B00262974 /* OrderCheckingViewController.swift in Sources */,
 				0D476F70286490C600262974 /* ChartUseCase.swift in Sources */,
 				0D476F41286422E500262974 /* Domain.swift in Sources */,
+				0D476F7F286557EB00262974 /* HistoryOrderUseCase.swift in Sources */,
 				0D476F56286441C800262974 /* EmptyView.swift in Sources */,
 				0D476F5228643EFD00262974 /* Reacitve+UIView.swift in Sources */,
 				0D476EFD2862B99700262974 /* ShopItem.swift in Sources */,
@@ -812,6 +827,7 @@
 				0D476F5C286456D900262974 /* ProductListUseCaseTests.swift in Sources */,
 				0D476F66286464C700262974 /* ProductDetailViewModelTests.swift in Sources */,
 				0D476F682864661300262974 /* MockShopModel.swift in Sources */,
+				0D476F83286558AA00262974 /* HistoryOrderViewModelTests.swift in Sources */,
 				0D476F7B2864A37600262974 /* MockRepo.swift in Sources */,
 				0D476F3C286384A800262974 /* MockUseCase.swift in Sources */,
 				0D476F3A2863845500262974 /* ProductListViewModelTests.swift in Sources */,
