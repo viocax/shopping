@@ -9,7 +9,7 @@ import Foundation
 @testable import Shpping
 @testable import Kingfisher
 
-typealias ShopModel = DateConvertable & ShopItemsViewModel
+typealias ShopModel = ShopItemsViewModel
 
 class MockShopModel: ShopModel {
     var identifier: String = UUID().uuidString

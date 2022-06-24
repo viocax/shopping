@@ -18,8 +18,8 @@ class MockUseCase: UseCase {
         injectAddToChart?(item)
     }
 
-    var injectGetShoppingList: [Observable<[DateConvertable & ShopItemsViewModel]>] = []
-    func getShoppingList() -> Observable<[DateConvertable & ShopItemsViewModel]> {
+    var injectGetShoppingList: [Observable<[ShopItemsViewModel]>] = []
+    func getShoppingList() -> Observable<[ShopItemsViewModel]> {
         if !injectGetShoppingList.isEmpty {
             return injectGetShoppingList.removeFirst()
         }

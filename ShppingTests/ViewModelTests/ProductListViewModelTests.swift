@@ -114,7 +114,7 @@ class ProductListViewModelTests: XCTestCase {
         output.isLoading
             .drive(observerIsLoading)
             .disposed(by: disposeBag)
-        let observerList = testScheduler.createObserver([DateConvertable & ShopItemsViewModel].self)
+        let observerList = testScheduler.createObserver([ShopItemsViewModel].self)
         output.list
             .drive(observerList)
             .disposed(by: disposeBag)

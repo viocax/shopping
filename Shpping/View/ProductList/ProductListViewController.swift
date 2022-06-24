@@ -58,7 +58,7 @@ private extension ProductListViewController {
     }
     func bindView() {
         // FIXME: interface
-        typealias CellForRowAt = ((UITableView, Int, (ShopItemsViewModel & DateConvertable)) -> UITableViewCell)
+        typealias CellForRowAt = ((UITableView, Int, ShopItemsViewModel) -> UITableViewCell)
         let cellForRow: CellForRowAt = { tableView, row, model in
             guard let cell = tableView.dequeueReusableCell(ProductListCell.self, indexPath: .init(row: row, section: .zero)) else {
                 return .init()
