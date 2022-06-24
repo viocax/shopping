@@ -17,7 +17,11 @@ extension DateConvertable {
         return ""
     }
 }
-
+extension Date {
+    func toString() -> String {
+        return ""
+    }
+}
 extension Int {
     func formatePrice() -> String {
         guard self > 0 else {

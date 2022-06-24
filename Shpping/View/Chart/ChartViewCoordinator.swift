@@ -18,6 +18,15 @@ final class ChartViewCoordinator {
 // MARK: ChartViewCoordinatorProtocol
 extension ChartViewCoordinator: ChartViewCoordinatorProtocol {
     func showOrderView(models: [ShopItemsViewModel]) -> Observable<Void> {
-        return .empty()
+        return .create { [weak self] subscriber in
+            guard let navigation = self?.viewController?.navigationController else {
+                subscriber.onCompleted()
+                return Disposables.create()
+            }
+            navigation.pushViewController(OrderCheckingViewController(), animated: true)
+            subscriber.onNext(())
+            subscriber.onCompleted()
+            return Disposables.create()
+        }
     }
 }

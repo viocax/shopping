@@ -78,10 +78,10 @@ private extension HistoryOrderCell {
 
 // MARK: Public
 extension HistoryOrderCell {
-    func config() {
-        titleLabel.text = "Title test"
-        descriptionLabel.text = "While this version aims to stay true to the original spirit and naming conventions of Rx, this projects also aims to provide a true Swift-first API for Rx APIs.Cross platform documentation can be found on ReactiveX.io.Like other Rx implementation, RxSwift intention is to enable easy composition of asynchronous operations and streams of data in the form of Observable objects and a suite of methods to transform and compose these pieces of asynchronous work."
-        createTimeLabel.text = "\(Date().timeIntervalSince1970)"
-        priceLabel.text = "$999999999"
+    func config(_ model: ShopItemsViewModel) {
+        titleLabel.text = model.title
+        descriptionLabel.text = model.description
+        createTimeLabel.text = model.createTime.toString()
+        priceLabel.text = model.price.formatePrice()
     }
 }
