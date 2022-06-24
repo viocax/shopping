@@ -1,5 +1,5 @@
 //
-//  DomainHistoryOrderTests.swift
+//  HistoryOrderTests.swift
 //  ShppingTests
 //
 //  Created by Jie liang Huang on 2022/6/24.
@@ -9,7 +9,7 @@ import XCTest
 @testable import Shpping
 @testable import RxBlocking
 
-class DomainHistoryOrderTests: XCTestCase {
+class HistoryOrderTests: XCTestCase {
 
     func test_GetHistoryList() {
         let mockRepo = MockRepo()

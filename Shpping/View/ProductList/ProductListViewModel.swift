@@ -9,9 +9,14 @@ import RxCocoa
 import RxSwift
 
 final class ProductListViewModel {
+
     private let coordinator: ProductCoordinatorProcotol
     private let useCase: ProductListUseCase
-    init(useCase: ProductListUseCase, coordiantor: ProductCoordinatorProcotol) {
+
+    init(
+        useCase: ProductListUseCase,
+        coordiantor: ProductCoordinatorProcotol
+    ) {
         self.useCase = useCase
         self.coordinator = coordiantor
     }

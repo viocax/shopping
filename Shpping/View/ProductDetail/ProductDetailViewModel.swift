@@ -11,7 +11,11 @@ import RxCocoa
 final class ProductDetailViewModel {
     private let useCase: ProductDetailUseCase
     private let coordinator: ProductDetailCoordinatorProtocol
-    init(useCase: ProductDetailUseCase, coordinator: ProductDetailCoordinatorProtocol) {
+
+    init(
+        useCase: ProductDetailUseCase,
+        coordinator: ProductDetailCoordinatorProtocol
+    ) {
         self.useCase = useCase
         self.coordinator = coordinator
     }

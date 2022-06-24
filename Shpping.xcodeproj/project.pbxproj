@@ -73,7 +73,11 @@
 		0D476F852865647200262974 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F842865647200262974 /* Date+String.swift */; };
 		0D476F872865648500262974 /* Int+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F862865648500262974 /* Int+String.swift */; };
 		0D476F89286568C200262974 /* Domain.HistoryOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F88286568C200262974 /* Domain.HistoryOrder.swift */; };
-		0D476F8B28656A9700262974 /* DomainHistoryOrderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F8A28656A9700262974 /* DomainHistoryOrderTests.swift */; };
+		0D476F8B28656A9700262974 /* HistoryOrderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F8A28656A9700262974 /* HistoryOrderTests.swift */; };
+		0D476F8D2865759300262974 /* OrderCheckingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F8C2865759300262974 /* OrderCheckingViewModel.swift */; };
+		0D476F8F2865779500262974 /* OrderCheckingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F8E2865779500262974 /* OrderCheckingUseCase.swift */; };
+		0D476F91286577A800262974 /* OrderChekingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F90286577A800262974 /* OrderChekingCoordinator.swift */; };
+		0D476F93286578C400262974 /* Domain.OrderChecking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F92286578C400262974 /* Domain.OrderChecking.swift */; };
 		68B572AEF91307FFA123DE00 /* Pods_Shpping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C483E819FEE5EB16195050EA /* Pods_Shpping.framework */; };
 		D8DA05E9AFDB432E9C010AE4 /* Pods_ShppingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0801337710867C1E6115717B /* Pods_ShppingTests.framework */; };
 		EB96052ACF78F8E6579EF70F /* Pods_Shpping_ShppingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E095D61A9CB735DA13534A /* Pods_Shpping_ShppingUITests.framework */; };
@@ -168,7 +172,11 @@
 		0D476F842865647200262974 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		0D476F862865648500262974 /* Int+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+String.swift"; sourceTree = "<group>"; };
 		0D476F88286568C200262974 /* Domain.HistoryOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain.HistoryOrder.swift; sourceTree = "<group>"; };
-		0D476F8A28656A9700262974 /* DomainHistoryOrderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainHistoryOrderTests.swift; sourceTree = "<group>"; };
+		0D476F8A28656A9700262974 /* HistoryOrderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOrderTests.swift; sourceTree = "<group>"; };
+		0D476F8C2865759300262974 /* OrderCheckingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCheckingViewModel.swift; sourceTree = "<group>"; };
+		0D476F8E2865779500262974 /* OrderCheckingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCheckingUseCase.swift; sourceTree = "<group>"; };
+		0D476F90286577A800262974 /* OrderChekingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderChekingCoordinator.swift; sourceTree = "<group>"; };
+		0D476F92286578C400262974 /* Domain.OrderChecking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain.OrderChecking.swift; sourceTree = "<group>"; };
 		167C8FD660DEC57BD2A9E826 /* Pods-Shpping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping.debug.xcconfig"; path = "Target Support Files/Pods-Shpping/Pods-Shpping.debug.xcconfig"; sourceTree = "<group>"; };
 		58F3595715F69147EB36DA8D /* Pods-Shpping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping.release.xcconfig"; path = "Target Support Files/Pods-Shpping/Pods-Shpping.release.xcconfig"; sourceTree = "<group>"; };
 		72D47CD5EB359D92B8192C62 /* Pods-ShppingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShppingTests.debug.xcconfig"; path = "Target Support Files/Pods-ShppingTests/Pods-ShppingTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -324,6 +332,8 @@
 			children = (
 				0D476F1F28634AF300262974 /* Component */,
 				0D476F1D2863460B00262974 /* OrderCheckingViewController.swift */,
+				0D476F90286577A800262974 /* OrderChekingCoordinator.swift */,
+				0D476F8C2865759300262974 /* OrderCheckingViewModel.swift */,
 			);
 			path = OrderChecking;
 			sourceTree = "<group>";
@@ -365,6 +375,7 @@
 				0D476F6F286490C500262974 /* ChartUseCase.swift */,
 				0D476F7E286557EB00262974 /* HistoryOrderUseCase.swift */,
 				0D476F61286462F300262974 /* ProductDetailUseCase.swift */,
+				0D476F8E2865779500262974 /* OrderCheckingUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -451,6 +462,7 @@
 				0D476F69286486CF00262974 /* Domain.ProductDetail.swift */,
 				0D476F88286568C200262974 /* Domain.HistoryOrder.swift */,
 				0D476F7328649F5B00262974 /* Domain.Chart.swift */,
+				0D476F92286578C400262974 /* Domain.OrderChecking.swift */,
 			);
 			path = Implement;
 			sourceTree = "<group>";
@@ -481,7 +493,7 @@
 			children = (
 				0D476F5B286456D900262974 /* ProductListUseCaseTests.swift */,
 				0D476F782864A36000262974 /* ProductDetailUseCaseTessts.swift */,
-				0D476F8A28656A9700262974 /* DomainHistoryOrderTests.swift */,
+				0D476F8A28656A9700262974 /* HistoryOrderTests.swift */,
 			);
 			path = UseCaseTests;
 			sourceTree = "<group>";
@@ -776,6 +788,8 @@
 			files = (
 				0D476F81286557FE00262974 /* HistoryOrderCoordinator.swift in Sources */,
 				0D476F1C2863168800262974 /* ChartTableViewCell.swift in Sources */,
+				0D476F8F2865779500262974 /* OrderCheckingUseCase.swift in Sources */,
+				0D476F8D2865759300262974 /* OrderCheckingViewModel.swift in Sources */,
 				0D476F322863836D00262974 /* ProductListUseCase.swift in Sources */,
 				0D476F62286462F300262974 /* ProductDetailUseCase.swift in Sources */,
 				0D476F72286490E500262974 /* ChartViewCoordinator.swift in Sources */,
@@ -783,6 +797,7 @@
 				0D476EC1286222E600262974 /* ViewController.swift in Sources */,
 				0D476F6028645D7E00262974 /* ProductDetailViewModel.swift in Sources */,
 				0D476F89286568C200262974 /* Domain.HistoryOrder.swift in Sources */,
+				0D476F93286578C400262974 /* Domain.OrderChecking.swift in Sources */,
 				0D476F772864A27F00262974 /* Repository.swift in Sources */,
 				0D476F5028643ED600262974 /* IndicatorView.swift in Sources */,
 				0D476F232863777000262974 /* HistoryOrderViewController.swift in Sources */,
@@ -796,6 +811,7 @@
 				0D476EFE2862B99700262974 /* Order.swift in Sources */,
 				0D476F1E2863460B00262974 /* OrderCheckingViewController.swift in Sources */,
 				0D476F70286490C600262974 /* ChartUseCase.swift in Sources */,
+				0D476F91286577A800262974 /* OrderChekingCoordinator.swift in Sources */,
 				0D476F41286422E500262974 /* Domain.swift in Sources */,
 				0D476F7F286557EB00262974 /* HistoryOrderUseCase.swift in Sources */,
 				0D476F872865648500262974 /* Int+String.swift in Sources */,
@@ -836,7 +852,7 @@
 				0D476F042862B9CC00262974 /* ShopItemTests.swift in Sources */,
 				0D476F792864A36000262974 /* ProductDetailUseCaseTessts.swift in Sources */,
 				0D476F5C286456D900262974 /* ProductListUseCaseTests.swift in Sources */,
-				0D476F8B28656A9700262974 /* DomainHistoryOrderTests.swift in Sources */,
+				0D476F8B28656A9700262974 /* HistoryOrderTests.swift in Sources */,
 				0D476F66286464C700262974 /* ProductDetailViewModelTests.swift in Sources */,
 				0D476F682864661300262974 /* MockShopModel.swift in Sources */,
 				0D476F83286558AA00262974 /* HistoryOrderViewModelTests.swift in Sources */,
