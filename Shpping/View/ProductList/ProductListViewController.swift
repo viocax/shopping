@@ -15,6 +15,7 @@ class ProductListViewController: UIViewController {
     private let tableView: UITableView = .init()
     private let viewModel: ProductListViewModel
     private let pullRefreshControl: UIRefreshControl = .init()
+    private let historyButton: UIButton = .init()
     private let loadMorePublisher: PublishRelay<Bool> = .init()
     
     private let disposeBag: DisposeBag = .init()
@@ -42,6 +43,9 @@ class ProductListViewController: UIViewController {
 private extension ProductListViewController {
     func setupView() {
         view.backgroundColor = .white
+        historyButton.setTitle("歷史紀錄", for: .normal)
+        let barButton = UIBarButtonItem(customView: historyButton)
+        navigationItem.setRightBarButton(barButton, animated: false)
         tableView.backgroundColor = .white
         view.addSubview(tableView)
         tableView.registerClass(UITableViewCell.self)
@@ -82,6 +86,7 @@ private extension ProductListViewController {
                 viewWillAppear: rx.viewWillAppear.asDriver(),
                 pullRefresh: pullRefresh,
                 loadingMore: loadingMore,
+                clickHistory: historyButton.rx.tap.asDriver(),
                 clickProduct: clickCell
             )
         let output = viewModel.transform(input)

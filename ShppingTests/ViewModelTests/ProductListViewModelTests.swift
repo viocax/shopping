@@ -15,8 +15,7 @@ import XCTest
 class ProductListViewModelTests: XCTestCase {
 
 
-
-    func test_clickProduct() {
+    func test_clickProduct_clickHistory() {
         // MARK: Dependency
         let disposeBag = DisposeBag()
         let testScheduler = TestScheduler(initialClock: 0)
@@ -29,13 +28,16 @@ class ProductListViewModelTests: XCTestCase {
             XCTAssertEqual(mockModel.identifier, model.identifier)
             return .just(())
         }
+        mockCoordinator.injectShowHistoryView = .just(())
         let viewModel = ProductListViewModel(useCase: mockUseCase, coordiantor: mockCoordinator)
         let triggerClick = PublishSubject<ShopItemsViewModel>()
+        let trggerHistory = PublishRelay<Void>()
         let input = ProductListViewModel
             .Input(
                 viewWillAppear: .empty(),
                 pullRefresh: .empty(),
                 loadingMore: .empty(),
+                clickHistory: trggerHistory.asDriverOnErrorJustComplete(),
                 clickProduct: triggerClick.asDriverOnErrorJustComplete()
             )
         let output = viewModel.transform(input)
@@ -48,6 +50,17 @@ class ProductListViewModelTests: XCTestCase {
 
         click.bind(to: triggerClick)
             .disposed(by: disposeBag)
+
+        let expectHistory: [Recorded<Event<Void>>] = [
+            .next(200, ())
+        ]
+
+        let clickHistory = testScheduler.createColdObservable([
+            .next(200, ())
+        ])
+        clickHistory.bind(to: trggerHistory)
+            .disposed(by: disposeBag)
+
         let observerResult = testScheduler.createObserver(Void.self)
         output.confirguration
             .drive(observerResult)
@@ -55,7 +68,10 @@ class ProductListViewModelTests: XCTestCase {
 
         testScheduler.start()
 
-        XCTAssertEqual(expect.map(\.time), observerResult.events.map(\.time))
+        XCTAssertEqual(
+            (expect + expectHistory).map(\.time),
+            observerResult.events.map(\.time)
+        )
     }
 
     func test_getList() {
@@ -86,6 +102,7 @@ class ProductListViewModelTests: XCTestCase {
                 viewWillAppear: triggerViewAppear.asDriverOnErrorJustComplete(),
                 pullRefresh: triggerPullRefresh.asDriverOnErrorJustComplete(),
                 loadingMore: triggerLoadingMore.asDriverOnErrorJustComplete(),
+                clickHistory: .empty(),
                 clickProduct: .empty()
             )
         let output = viewModel.transform(input)
