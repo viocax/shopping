@@ -39,7 +39,7 @@ extension ShopItem: Codable {
 }
 
 
-extension ShopItem: ShopItemsViewModel, DateConvertable {
+extension ShopItem: ShopItemsViewModel {
     var title: String {
         return self.name
     }

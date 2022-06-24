@@ -26,7 +26,7 @@ extension ProductListViewModel: ViewModelType {
         let clickProduct: Driver<ShopItemsViewModel>
     }
     struct Output {
-        let list: Driver<[ShopItemsViewModel & DateConvertable]>
+        let list: Driver<[ShopItemsViewModel]>
         let isLoading: Driver<Bool>
         let isEmpty: Driver<Bool>
         let error: Driver<ErrorInfo>

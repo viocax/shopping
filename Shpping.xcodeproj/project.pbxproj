@@ -31,7 +31,6 @@
 		0D476F26286378A700262974 /* HistoryOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F25286378A700262974 /* HistoryOrderCell.swift */; };
 		0D476F2828637D7300262974 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F2728637D7300262974 /* ViewModelType.swift */; };
 		0D476F2A28637E1500262974 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F2928637E1500262974 /* ProductListViewModel.swift */; };
-		0D476F2C2863819400262974 /* DateConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F2B2863819400262974 /* DateConvertable.swift */; };
 		0D476F2E286381A700262974 /* RandomImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F2D286381A700262974 /* RandomImageInfo.swift */; };
 		0D476F302863835800262974 /* ProductCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F2F2863835800262974 /* ProductCoordinator.swift */; };
 		0D476F322863836D00262974 /* ProductListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F312863836D00262974 /* ProductListUseCase.swift */; };
@@ -71,6 +70,8 @@
 		0D476F7F286557EB00262974 /* HistoryOrderUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F7E286557EB00262974 /* HistoryOrderUseCase.swift */; };
 		0D476F81286557FE00262974 /* HistoryOrderCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F80286557FE00262974 /* HistoryOrderCoordinator.swift */; };
 		0D476F83286558AA00262974 /* HistoryOrderViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F82286558AA00262974 /* HistoryOrderViewModelTests.swift */; };
+		0D476F852865647200262974 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F842865647200262974 /* Date+String.swift */; };
+		0D476F872865648500262974 /* Int+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D476F862865648500262974 /* Int+String.swift */; };
 		68B572AEF91307FFA123DE00 /* Pods_Shpping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C483E819FEE5EB16195050EA /* Pods_Shpping.framework */; };
 		D8DA05E9AFDB432E9C010AE4 /* Pods_ShppingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0801337710867C1E6115717B /* Pods_ShppingTests.framework */; };
 		EB96052ACF78F8E6579EF70F /* Pods_Shpping_ShppingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E095D61A9CB735DA13534A /* Pods_Shpping_ShppingUITests.framework */; };
@@ -123,7 +124,6 @@
 		0D476F25286378A700262974 /* HistoryOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOrderCell.swift; sourceTree = "<group>"; };
 		0D476F2728637D7300262974 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		0D476F2928637E1500262974 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
-		0D476F2B2863819400262974 /* DateConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConvertable.swift; sourceTree = "<group>"; };
 		0D476F2D286381A700262974 /* RandomImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageInfo.swift; sourceTree = "<group>"; };
 		0D476F2F2863835800262974 /* ProductCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCoordinator.swift; sourceTree = "<group>"; };
 		0D476F312863836D00262974 /* ProductListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListUseCase.swift; sourceTree = "<group>"; };
@@ -163,6 +163,8 @@
 		0D476F7E286557EB00262974 /* HistoryOrderUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOrderUseCase.swift; sourceTree = "<group>"; };
 		0D476F80286557FE00262974 /* HistoryOrderCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOrderCoordinator.swift; sourceTree = "<group>"; };
 		0D476F82286558AA00262974 /* HistoryOrderViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOrderViewModelTests.swift; sourceTree = "<group>"; };
+		0D476F842865647200262974 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
+		0D476F862865648500262974 /* Int+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+String.swift"; sourceTree = "<group>"; };
 		167C8FD660DEC57BD2A9E826 /* Pods-Shpping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping.debug.xcconfig"; path = "Target Support Files/Pods-Shpping/Pods-Shpping.debug.xcconfig"; sourceTree = "<group>"; };
 		58F3595715F69147EB36DA8D /* Pods-Shpping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping.release.xcconfig"; path = "Target Support Files/Pods-Shpping/Pods-Shpping.release.xcconfig"; sourceTree = "<group>"; };
 		72D47CD5EB359D92B8192C62 /* Pods-ShppingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShppingTests.debug.xcconfig"; path = "Target Support Files/Pods-ShppingTests/Pods-ShppingTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -367,6 +369,8 @@
 			isa = PBXGroup;
 			children = (
 				0D476F372863840A00262974 /* Reactive+UIViewController.swift */,
+				0D476F842865647200262974 /* Date+String.swift */,
+				0D476F862865648500262974 /* Int+String.swift */,
 				0D476F112862C20200262974 /* extension+UITableView.swift */,
 				0D476F5128643EFD00262974 /* Reacitve+UIView.swift */,
 			);
@@ -380,7 +384,6 @@
 				0D476EFB2862B99700262974 /* Order.swift */,
 				0D476F5328643F3000262974 /* Jie.swift */,
 				0D476F2D286381A700262974 /* RandomImageInfo.swift */,
-				0D476F2B2863819400262974 /* DateConvertable.swift */,
 				0D476EFA2862B99700262974 /* ShopItem.swift */,
 			);
 			path = Model;
@@ -774,7 +777,6 @@
 				0D476EC1286222E600262974 /* ViewController.swift in Sources */,
 				0D476F6028645D7E00262974 /* ProductDetailViewModel.swift in Sources */,
 				0D476F772864A27F00262974 /* Repository.swift in Sources */,
-				0D476F2C2863819400262974 /* DateConvertable.swift in Sources */,
 				0D476F5028643ED600262974 /* IndicatorView.swift in Sources */,
 				0D476F232863777000262974 /* HistoryOrderViewController.swift in Sources */,
 				0D476F642864630900262974 /* ProductDetailCoordinator.swift in Sources */,
@@ -782,12 +784,14 @@
 				0D476EBD286222E600262974 /* AppDelegate.swift in Sources */,
 				0D476F102862C14800262974 /* ProductListViewController.swift in Sources */,
 				0D476F6C28648B6D00262974 /* ChartViewModel.swift in Sources */,
+				0D476F852865647200262974 /* Date+String.swift in Sources */,
 				0D476F36286383DC00262974 /* HUDTracker.swift in Sources */,
 				0D476EFE2862B99700262974 /* Order.swift in Sources */,
 				0D476F1E2863460B00262974 /* OrderCheckingViewController.swift in Sources */,
 				0D476F70286490C600262974 /* ChartUseCase.swift in Sources */,
 				0D476F41286422E500262974 /* Domain.swift in Sources */,
 				0D476F7F286557EB00262974 /* HistoryOrderUseCase.swift in Sources */,
+				0D476F872865648500262974 /* Int+String.swift in Sources */,
 				0D476F56286441C800262974 /* EmptyView.swift in Sources */,
 				0D476F5228643EFD00262974 /* Reacitve+UIView.swift in Sources */,
 				0D476EFD2862B99700262974 /* ShopItem.swift in Sources */,

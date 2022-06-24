@@ -14,7 +14,7 @@ extension Domain {
         // MARK: from server will better
         private let maxPage: Int
         private let service: NetworkService
-        private var tempList: [DateConvertable & ShopItemsViewModel] = []
+        private var tempList: [ShopItemsViewModel] = []
         
         init(service: NetworkService = APIService(), maxCount: Int = 5) {
             self.service = service
@@ -33,16 +33,16 @@ extension Domain.ProductList: ProductListUseCase {
         return .just(pageCount += 1)
     }
 
-    func getShoppingList() -> Observable<[DateConvertable & ShopItemsViewModel]> {
+    func getShoppingList() -> Observable<[ShopItemsViewModel]> {
         let currentCount = pageCount
         guard currentCount <= maxPage else {
             return .empty()
         }
         return service.request(ProductListEndpoint())
-            .map { [weak self] item -> [DateConvertable & ShopItemsViewModel] in
+            .map { [weak self] item -> [ShopItemsViewModel] in
                 let new = item + item + item + item + item + item + item
                 let tempNames = ["Dan", "Ben", "Ken", "Jane", "Kylle"]
-                let result = new.map { showItem  -> DateConvertable & ShopItemsViewModel  in
+                let result = new.map { showItem  -> ShopItemsViewModel  in
                     var copy = showItem
                     copy.identifier = UUID().uuidString + copy.identifier
                     copy.name = "Page: \(currentCount), Name: \(tempNames.randomElement() ?? "")"
