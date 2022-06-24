@@ -17,4 +17,7 @@ extension Domain.OrderChecking: OrderCheckingUseCase {
     func checkOut() -> Observable<Void> {
         return .empty()
     }
+    func getItemsToCheckOut() -> Observable<[ChartViewCellViewModel]> {
+        return .empty()
+    }
 }

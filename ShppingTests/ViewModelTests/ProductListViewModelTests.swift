@@ -11,7 +11,6 @@ import XCTest
 @testable import RxCocoa
 @testable import RxSwift
 
-
 class ProductListViewModelTests: XCTestCase {
 
 
@@ -145,7 +144,7 @@ class ProductListViewModelTests: XCTestCase {
             .disposed(by: disposeBag)
 
         // MARK: Expectaction
-        let expectList: [Recorded<Event<[ShopModel]>>] = [
+        let expectList: [Recorded<Event<[ShopItemsViewModel]>>] = [
             .next(100, mockList),
             .next(200, []),
             .next(300, mockList + mockList)

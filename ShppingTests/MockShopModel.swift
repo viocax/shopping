@@ -9,9 +9,7 @@ import Foundation
 @testable import Shpping
 @testable import Kingfisher
 
-typealias ShopModel = ShopItemsViewModel
-
-class MockShopModel: ShopModel {
+class MockShopModel: ShopItemsViewModel {
     var identifier: String = UUID().uuidString
     var title: String = ""
     var description: String = ""

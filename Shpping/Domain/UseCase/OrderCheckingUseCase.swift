@@ -9,4 +9,5 @@ import RxSwift
 
 protocol OrderCheckingUseCase {
     func checkOut() -> Observable<Void>
+    func getItemsToCheckOut() -> Observable<[ChartViewCellViewModel]>
 }

@@ -31,16 +31,35 @@ extension OrderCheckingViewModel: ViewModelType {
     struct Output {
         let list: Driver<[ChartViewCellViewModel]>
         let isLoading: Driver<Bool>
-        let error: Driver<ErrorInfo>
         let configuration: Driver<Void>
     }
     func transform(_ input: Input) -> Output {
 
+        let hudTracker = HUDTracker()
+
+        let checkOut = input.clickCheckOut
+            .flatMap { _ in
+                return self.useCase.checkOut()
+                    .trackActivity(hudTracker)
+                    .asDriverOnErrorJustComplete()
+            }
+
+        let list = input.bindView
+            .flatMap {
+                return self.useCase.getItemsToCheckOut()
+                    .trackActivity(hudTracker)
+                    .asDriverOnErrorJustComplete()
+            }
+
+        let configuration = Driver
+            .merge(
+                checkOut
+            )
+
         return .init(
-            list: .empty(),
-            isLoading: .empty(),
-            error: .empty(),
-            configuration: .empty()
+            list: list,
+            isLoading: hudTracker.asDriver(),
+            configuration: configuration
         )
     }
 }
