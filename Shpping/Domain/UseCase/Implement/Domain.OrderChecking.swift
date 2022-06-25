@@ -41,6 +41,7 @@ extension Domain.OrderChecking: OrderCheckingUseCase {
             repo.saveToHistory(currentList)
             return repo.removeAllChart()
         }
+        .delay(.milliseconds(1500), scheduler: MainScheduler.instance)
     }
     func getItemsToCheckOut() -> Observable<[OrderCellDisplayModel]> {
         struct TempOrderCell: OrderCellDisplayModel {
