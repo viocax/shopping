@@ -19,11 +19,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window: UIWindow = .init(windowScene: windowScene)
         let useCase = Domain.ProductList()
-        let coordinator = ProductCoordinator()
+        let coordinator = Coordinator()
         let viewModel = ProductListViewModel(useCase: useCase, coordiantor: coordinator)
         let viewController = ProductListViewController(viewModel: viewModel)
         let navigation = UINavigationController(rootViewController: viewController)
-        coordinator.viewCotroller = viewController
+        coordinator.viewController = viewController
         window.rootViewController = navigation
         window.makeKeyAndVisible()
         self.window = window
