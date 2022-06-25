@@ -82,6 +82,8 @@
 		0D8DBE872865CA5E00FD4819 /* UIViewController+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8DBE862865CA5E00FD4819 /* UIViewController+Appearance.swift */; };
 		0D8DBE8A2865CDFF00FD4819 /* ShopItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8DBE892865CDFF00FD4819 /* ShopItemsViewModel.swift */; };
 		0D8DBE8C2865CE4000FD4819 /* ChartViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8DBE8B2865CE4000FD4819 /* ChartViewCellViewModel.swift */; };
+		0D8DBE8E2865D42000FD4819 /* OrderCheckingUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8DBE8D2865D42000FD4819 /* OrderCheckingUseCaseTests.swift */; };
+		0D8DBE902866B84B00FD4819 /* OrderFooterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8DBE8F2866B84B00FD4819 /* OrderFooterViewModel.swift */; };
 		68B572AEF91307FFA123DE00 /* Pods_Shpping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C483E819FEE5EB16195050EA /* Pods_Shpping.framework */; };
 		D8DA05E9AFDB432E9C010AE4 /* Pods_ShppingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0801337710867C1E6115717B /* Pods_ShppingTests.framework */; };
 		EB96052ACF78F8E6579EF70F /* Pods_Shpping_ShppingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E095D61A9CB735DA13534A /* Pods_Shpping_ShppingUITests.framework */; };
@@ -185,6 +187,8 @@
 		0D8DBE862865CA5E00FD4819 /* UIViewController+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Appearance.swift"; sourceTree = "<group>"; };
 		0D8DBE892865CDFF00FD4819 /* ShopItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopItemsViewModel.swift; sourceTree = "<group>"; };
 		0D8DBE8B2865CE4000FD4819 /* ChartViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewCellViewModel.swift; sourceTree = "<group>"; };
+		0D8DBE8D2865D42000FD4819 /* OrderCheckingUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCheckingUseCaseTests.swift; sourceTree = "<group>"; };
+		0D8DBE8F2866B84B00FD4819 /* OrderFooterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderFooterViewModel.swift; sourceTree = "<group>"; };
 		167C8FD660DEC57BD2A9E826 /* Pods-Shpping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping.debug.xcconfig"; path = "Target Support Files/Pods-Shpping/Pods-Shpping.debug.xcconfig"; sourceTree = "<group>"; };
 		58F3595715F69147EB36DA8D /* Pods-Shpping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shpping.release.xcconfig"; path = "Target Support Files/Pods-Shpping/Pods-Shpping.release.xcconfig"; sourceTree = "<group>"; };
 		72D47CD5EB359D92B8192C62 /* Pods-ShppingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShppingTests.debug.xcconfig"; path = "Target Support Files/Pods-ShppingTests/Pods-ShppingTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -504,6 +508,7 @@
 			children = (
 				0D476F5B286456D900262974 /* ProductListUseCaseTests.swift */,
 				0D476F782864A36000262974 /* ProductDetailUseCaseTessts.swift */,
+				0D8DBE8D2865D42000FD4819 /* OrderCheckingUseCaseTests.swift */,
 				0D476F8A28656A9700262974 /* HistoryOrderTests.swift */,
 			);
 			path = UseCaseTests;
@@ -522,6 +527,7 @@
 			children = (
 				0D8DBE892865CDFF00FD4819 /* ShopItemsViewModel.swift */,
 				0D8DBE8B2865CE4000FD4819 /* ChartViewCellViewModel.swift */,
+				0D8DBE8F2866B84B00FD4819 /* OrderFooterViewModel.swift */,
 			);
 			path = InterFace;
 			sourceTree = "<group>";
@@ -834,6 +840,7 @@
 				0D476F1E2863460B00262974 /* OrderCheckingViewController.swift in Sources */,
 				0D476F70286490C600262974 /* ChartUseCase.swift in Sources */,
 				0D476F91286577A800262974 /* OrderChekingCoordinator.swift in Sources */,
+				0D8DBE902866B84B00FD4819 /* OrderFooterViewModel.swift in Sources */,
 				0D476F41286422E500262974 /* Domain.swift in Sources */,
 				0D476F7F286557EB00262974 /* HistoryOrderUseCase.swift in Sources */,
 				0D476F872865648500262974 /* Int+String.swift in Sources */,
@@ -882,6 +889,7 @@
 				0D476F83286558AA00262974 /* HistoryOrderViewModelTests.swift in Sources */,
 				0D476F7B2864A37600262974 /* MockRepo.swift in Sources */,
 				0D476F3C286384A800262974 /* MockUseCase.swift in Sources */,
+				0D8DBE8E2865D42000FD4819 /* OrderCheckingUseCaseTests.swift in Sources */,
 				0D476F3A2863845500262974 /* ProductListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

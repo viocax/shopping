@@ -67,8 +67,8 @@ class MockUseCase: UseCase {
     func getItemsToCheckOut() -> Observable<[OrderCellDisplayModel]> {
         return injectGetItemsToCheckOut
     }
-    var injectFooterModel: (([OrderCellDisplayModel]) -> OrderCellDisplayModel)?
-    func getFooterInfo(_ allItems: [OrderCellDisplayModel]) -> OrderCellDisplayModel {
-        return injectFooterModel!(allItems)
+    var injectFooterModel: OrderFooterViewModel?
+    func getFooterInfo() -> OrderFooterViewModel {
+        return injectFooterModel!
     }
 }

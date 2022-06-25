@@ -29,7 +29,7 @@ extension OrderCheckingViewModel: ViewModelType {
         let clickCheckOut: Driver<Void>
     }
     struct Output {
-        let footer: Driver<OrderCellDisplayModel>
+        let footer: Driver<OrderFooterViewModel>
         let list: Driver<[OrderCellDisplayModel]>
         let isLoading: Driver<Bool>
         let configuration: Driver<Void>
@@ -52,7 +52,7 @@ extension OrderCheckingViewModel: ViewModelType {
                     .asDriverOnErrorJustComplete()
             }
         let footer = list
-            .map(useCase.getFooterInfo(_:))
+            .map { _ in self.useCase.getFooterInfo() }
 
         let configuration = Driver
             .merge(
