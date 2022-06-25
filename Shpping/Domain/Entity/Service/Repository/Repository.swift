@@ -11,7 +11,7 @@ protocol RepositoryProtocol: AnyObject {
     func getShopItemOfChart() -> [ShopItemsViewModel]
     func addToChart(_ item: ShopItemsViewModel)
 
-    func removeAllChart()
+    func removeItemInChart(_ items: [ShopItemsViewModel])
 
     var selectKeys: [String] { get set }
     // TODO: 可能是跟server溝通再存入db會比較合適，，這邊為了方便就丟在這
@@ -34,14 +34,18 @@ extension Repository: RepositoryProtocol {
             return Array(selectedToPurChaseKey)
         }
         set {
-            selectedToPurChaseKey.formUnion(newValue)
+            selectedToPurChaseKey = Set(newValue)
         }
     }
     func addToChart(_ item: ShopItemsViewModel) {
         currentChart.append(item)
     }
-    func removeAllChart() {
-        currentChart.removeAll()
+    func removeItemInChart(_ items: [ShopItemsViewModel]) {
+        items.forEach { item in
+            if let index = currentChart.firstIndex(where: { $0.identifier == item.identifier }) {
+                currentChart.remove(at: index)
+            }
+        }
     }
     func getShopItemOfChart() -> [ShopItemsViewModel] {
         return currentChart

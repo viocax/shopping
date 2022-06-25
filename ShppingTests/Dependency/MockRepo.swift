@@ -17,7 +17,7 @@ class MockRepo: RepositoryProtocol {
     }
 
     var injectRemoveAllChart: (() -> Void)?
-    func removeAllChart() {
+    func removeItemInChart(_ items: [ShopItemsViewModel]) {
         injectRemoveAllChart?()
     }
     var injectSaveToHistory: (([ShopItemsViewModel]) -> Void)?
