@@ -16,6 +16,7 @@ class ProductListViewController: UIViewController {
     private let viewModel: ProductListViewModel
     private let pullRefreshControl: UIRefreshControl = .init()
     private let historyButton: UIButton = .init()
+    private let emptyView: EmptyView = .init()
     private let loadMorePublisher: PublishRelay<Bool> = .init()
     
     private let disposeBag: DisposeBag = .init()
@@ -57,7 +58,7 @@ private extension ProductListViewController {
         tableView.estimatedRowHeight = 80
         tableView.separatorStyle = .none
         tableView.refreshControl = pullRefreshControl
-        tableView.backgroundView = EmptyView()
+        tableView.backgroundView = emptyView
         setBarBlur()
         title = "商品"
     }
@@ -102,6 +103,10 @@ private extension ProductListViewController {
             .disposed(by: disposeBag)
         output.list.map { _ in }
             .drive(endRefreshingIfNeed)
+            .disposed(by: disposeBag)
+        output.list.map(\.isEmpty).map(!)
+            .distinctUntilChanged()
+            .drive(emptyView.rx.isHidden)
             .disposed(by: disposeBag)
         output.error
             .drive() // TODO: add error view

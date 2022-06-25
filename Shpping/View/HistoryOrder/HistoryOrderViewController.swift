@@ -16,6 +16,7 @@ class HistoryOrderViewController: UIViewController {
     private let titleLabel: UILabel = .init()
     private let closeButton: UIButton = .init()
     private let tableView: UITableView = .init()
+    private let emptyView: EmptyView = .init()
 
     init(viewModel: HistoryOrderViewModel) {
         self.viewModel = viewModel
@@ -62,7 +63,7 @@ private extension HistoryOrderViewController {
             .rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 60
         tableView.separatorStyle = .none
-        tableView.backgroundView = EmptyView()
+        tableView.backgroundView = emptyView
         tableView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
             make.top.equalTo(titleLabel.snp.bottom).offset(8)
@@ -90,6 +91,10 @@ private extension HistoryOrderViewController {
         let output = viewModel.transform(input)
         output.list
             .drive(tableView.rx.items)(cellRowAt)
+            .disposed(by: disposeBag)
+        output.list.map(\.isEmpty).map(!)
+            .distinctUntilChanged()
+            .drive(emptyView.rx.isHidden)
             .disposed(by: disposeBag)
         output.isLoading
             .drive(view.rx.indicatorAnimator)

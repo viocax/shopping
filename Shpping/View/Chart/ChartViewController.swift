@@ -12,7 +12,6 @@ import RxCocoa
 class ChartViewController: UIViewController {
 
     private let disposeBag: DisposeBag = .init()
-    private let emptyView: UIView = .init()
     private let confirmButton: UIButton = .init()
     private let tableView: UITableView = .init()
     private let titleLabel: UILabel = .init()
