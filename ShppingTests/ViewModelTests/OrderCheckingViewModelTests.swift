@@ -13,6 +13,11 @@ import XCTest
 @testable import Kingfisher
 
 class OrderCheckingViewModelTests: XCTestCase {
+    
+    struct MockFooter: OrderFooterViewModel {
+        var content: String
+        var priceString: String
+    }
 
     class Model: ChartViewCellViewModel {
         var id: String
@@ -93,18 +98,9 @@ class OrderCheckingViewModelTests: XCTestCase {
                 clickCheckOut: .empty()
             )
         let mockModel: [OrderCellDisplayModel] = (0...10).map(Model.init)
-        let mockFooterModel = Model(id: 99999)
+        let mockFooterModel = MockFooter(content: "Test", priceString: "$0000")
         mockUseCase.injectGetItemsToCheckOut = .just(mockModel)
-        mockUseCase.injectFooterModel = { getAllOrder in
-            zip(getAllOrder, mockModel).forEach { getted, mock in
-                XCTAssertEqual(getted.price, mock.price)
-                XCTAssertEqual(getted.title, mock.title)
-                XCTAssertEqual(getted.id, mock.id)
-                XCTAssertEqual(getted.image.cacheKey, mock.image.cacheKey)
-                XCTAssertEqual(getted.image.downloadURL, mock.image.downloadURL)
-            }
-            return mockFooterModel
-        }
+        mockUseCase.injectFooterModel = mockFooterModel
         let output = viewModel.transform(input)
 
         let bindview = testScheduler.createColdObservable([
@@ -123,11 +119,11 @@ class OrderCheckingViewModelTests: XCTestCase {
             .drive(observerList)
             .disposed(by: disposeBag)
 
-        let expectFooter: [Recorded<Event<OrderCellDisplayModel>>] = [
+        let expectFooter: [Recorded<Event<OrderFooterViewModel>>] = [
             .next(200, mockFooterModel),
             .next(300, mockFooterModel)
         ]
-        let observerFooter = testScheduler.createObserver(OrderCellDisplayModel.self)
+        let observerFooter = testScheduler.createObserver(OrderFooterViewModel.self)
         output.footer
             .drive(observerFooter)
             .disposed(by: disposeBag)
@@ -151,11 +147,8 @@ class OrderCheckingViewModelTests: XCTestCase {
             expectFooter.compactMap(\.value.element),
             observerFooter.events.compactMap(\.value.element)
         ).forEach { expect, result in
-            XCTAssertEqual(expect.id, result.id)
-            XCTAssertEqual(expect.title, result.title)
-            XCTAssertEqual(expect.price, result.price)
-            XCTAssertEqual(expect.image.cacheKey, result.image.cacheKey)
-            XCTAssertEqual(expect.image.downloadURL, result.image.downloadURL)
+            XCTAssertEqual(expect.content, result.content)
+            XCTAssertEqual(expect.priceString, result.priceString)
         }
         
         XCTAssertEqual(expectIsLoading, observerIsLoading.events)

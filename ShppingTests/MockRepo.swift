@@ -9,16 +9,18 @@ import XCTest
 @testable import Shpping
 
 class MockRepo: RepositoryProtocol {
+    var injectCurrnetChart: (() -> ([ShopItemsViewModel]))?
     func getShopItemOfChart() -> [ShopItemsViewModel] {
-        XCTFail()
-        return []
+        return injectCurrnetChart?() ?? []
     }
 
+    var injectRemoveAllChart: (() -> Void)?
     func removeAllChart() {
-        XCTFail()
+        injectRemoveAllChart?()
     }
+    var injectSaveToHistory: (([ShopItemsViewModel]) -> Void)?
     func saveToHistory(_ items: [ShopItemsViewModel]) {
-        XCTFail()
+        injectSaveToHistory?(items)
     }
 
     var injectGetHistory: [ShopItemsViewModel] = []
