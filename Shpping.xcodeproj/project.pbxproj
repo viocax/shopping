@@ -272,11 +272,7 @@
 		0D476ED2286222E700262974 /* ShppingTests */ = {
 			isa = PBXGroup;
 			children = (
-				0D476F3B286384A800262974 /* MockUseCase.swift */,
-				0D476F672864661300262974 /* MockShopModel.swift */,
-				0D476F7A2864A37600262974 /* MockRepo.swift */,
-				0D476F3D2864117700262974 /* MockCoordinator.swift */,
-				0D476F5D2864570300262974 /* MockService.swift */,
+				0D8DBE912866DE2500FD4819 /* Dependency */,
 				0D476F5A286456B900262974 /* UseCaseTests */,
 				0D476F59286456AE00262974 /* ViewModelTests */,
 				0D476F062862B9D100262974 /* EntityTests */,
@@ -530,6 +526,18 @@
 				0D8DBE8F2866B84B00FD4819 /* OrderFooterViewModel.swift */,
 			);
 			path = InterFace;
+			sourceTree = "<group>";
+		};
+		0D8DBE912866DE2500FD4819 /* Dependency */ = {
+			isa = PBXGroup;
+			children = (
+				0D476F3B286384A800262974 /* MockUseCase.swift */,
+				0D476F672864661300262974 /* MockShopModel.swift */,
+				0D476F7A2864A37600262974 /* MockRepo.swift */,
+				0D476F3D2864117700262974 /* MockCoordinator.swift */,
+				0D476F5D2864570300262974 /* MockService.swift */,
+			);
+			path = Dependency;
 			sourceTree = "<group>";
 		};
 		E6B0CD90B2553C5CCA589698 /* Pods */ = {
