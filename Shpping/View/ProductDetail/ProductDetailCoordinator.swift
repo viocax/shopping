@@ -10,7 +10,7 @@ import RxSwift
 
 protocol ProductDetailCoordinatorProtocol {
     func showChartView() -> Observable<Void>
-    func showOrderCheckingView(_ model: ShopItemsViewModel) -> Observable<Void>
+    func showOrderCheckingView() -> Observable<Void>
 }
 
 final class ProductDetailCoordinator {
@@ -37,14 +37,18 @@ extension ProductDetailCoordinator: ProductDetailCoordinatorProtocol {
         }
     }
     
-    func showOrderCheckingView(_ model: ShopItemsViewModel) -> Observable<Void> {
+    func showOrderCheckingView() -> Observable<Void> {
         return .create { [weak self] subscriber in
             guard let navigation = self?.viewController?.navigationController else {
                 subscriber.onCompleted()
                 return Disposables.create()
             }
-            let orderView = OrderCheckingViewController()
-            navigation.pushViewController(orderView, animated: true)
+            let useCase = Domain.OrderChecking()
+            let coordinator = OrderChekingCoordinator()
+            let viewModel = OrderCheckingViewModel(useCase: useCase, coordinator: coordinator)
+            let orderCheck = OrderCheckingViewController(viewModel: viewModel)
+            coordinator.viewController = orderCheck
+            navigation.pushViewController(orderCheck, animated: true)
             subscriber.onNext(())
             subscriber.onCompleted()
             return Disposables.create()

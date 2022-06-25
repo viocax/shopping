@@ -25,10 +25,12 @@ extension ChartViewModel: ViewModelType {
     struct Input {
         let bindView: Driver<Void>
         let tapCell: Driver<ChartViewCellViewModel>
+        let clickCheckOut: Driver<Void>
     }
     struct Output {
         let list: Driver<[ChartViewCellViewModel]>
         let isEnablePurchase: Driver<Bool>
+        let configuration: Driver<Void>
     }
     func transform(_ input: Input) -> Output {
 
@@ -44,6 +46,12 @@ extension ChartViewModel: ViewModelType {
                 initalList,
                 toggle
             )
+
+        let toOrderView = input.clickCheckOut
+            .flatMap {
+                return self.coordinator.showOrderView()
+                    .asDriverOnErrorJustComplete()
+            }
         
         let isEnable = Driver
             .merge(
@@ -53,9 +61,15 @@ extension ChartViewModel: ViewModelType {
             .map { _ in self.useCase.canCheckOut() }
             .distinctUntilChanged()
 
+        let configuration = Driver
+            .merge(
+                toOrderView
+            )
+
         return .init(
             list: list,
-            isEnablePurchase: isEnable
+            isEnablePurchase: isEnable,
+            configuration: configuration
         )
     }
 }

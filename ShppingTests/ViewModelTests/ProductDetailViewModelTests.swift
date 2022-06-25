@@ -61,8 +61,7 @@ class ProductDetailViewModelTests: XCTestCase {
         let expectPurchase: [Recorded<Event<Void>>] = [
             .next(200, ())
         ]
-        mockCoordinator.injectOrderCheckingView = { model in
-            XCTAssertEqual(model.identifier, mockModel.identifier)
+        mockCoordinator.injectOrderCheckingView = {
             return .just(())
         }
 

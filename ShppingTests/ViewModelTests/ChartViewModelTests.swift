@@ -39,7 +39,8 @@ class ChartViewModelTests: XCTestCase {
         let input = ChartViewModel
             .Input(
                 bindView: triggerBindView.asDriverOnErrorJustComplete(),
-                tapCell: triggerTapCell.asDriverOnErrorJustComplete()
+                tapCell: triggerTapCell.asDriverOnErrorJustComplete(),
+                clickCheckOut: .empty()
             )
         let mockModels: [ChartViewCellViewModel] = (0...10).map(Model.init)
         mockUseCase.injectCurrnetChartItems = mockModels

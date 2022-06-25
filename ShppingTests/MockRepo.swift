@@ -9,6 +9,8 @@ import XCTest
 @testable import Shpping
 
 class MockRepo: RepositoryProtocol {
+    var selectKeys: [String] = []
+    
     var injectCurrnetChart: (() -> ([ShopItemsViewModel]))?
     func getShopItemOfChart() -> [ShopItemsViewModel] {
         return injectCurrnetChart?() ?? []

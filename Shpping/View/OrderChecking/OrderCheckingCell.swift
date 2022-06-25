@@ -60,9 +60,9 @@ private extension OrderCheckingCell {
 // MARK: Public
 extension OrderCheckingCell {
     // FIXME: 
-    func config() {
-        titleLabel.text = "商品名稱商品名稱商品名稱商品名稱商品名稱商品名稱商品名稱商品名稱商品名稱商品名稱商品名稱商品名稱商品名稱商品名稱"
-        descriptionLabel.text = "descriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabel"
-        priceLabel.text = "$999999"
+    func config(_ model: OrderCellDisplayModel) {
+        titleLabel.text = model.title
+        descriptionLabel.text = model.title
+        priceLabel.text = model.price
     }
 }

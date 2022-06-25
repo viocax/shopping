@@ -101,7 +101,8 @@ private extension ChartViewController {
         let input = ChartViewModel
             .Input(
                 bindView: bindView.asDriverOnErrorJustComplete(),
-                tapCell: tapCell
+                tapCell: tapCell,
+                clickCheckOut: confirmButton.rx.tap.asDriver()
             )
         let output = viewModel.transform(input)
         output.list
@@ -109,6 +110,9 @@ private extension ChartViewController {
             .disposed(by: disposeBag)
         output.isEnablePurchase
             .drive(buttonEnable)
+            .disposed(by: disposeBag)
+        output.configuration
+            .drive()
             .disposed(by: disposeBag)
     }
     var buttonEnable: Binder<Bool> {

@@ -25,6 +25,7 @@ extension Domain {
 extension Domain.ProductDetail: ProductDetailUseCase {
     func addToChart(_ item: ShopItemsViewModel) {
         repository.addToChart(item)
+        repository.selectKeys.append(item.identifier)
     }
     func getCurrentShopItem() -> ShopItemsViewModel {
         // MARK: 目前這件事僅是為了讓外部可以參考scrollView 可以滑動效果

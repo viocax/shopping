@@ -38,12 +38,16 @@ extension OrderCheckingViewModel: ViewModelType {
 
         let hudTracker = HUDTracker()
 
+        let checkOutSuccess = self.coordinator.showAlert()
+            .flatMap { self.coordinator.popToRoot() }
+            .asDriverOnErrorJustComplete()
+
         let checkOut = input.clickCheckOut
             .flatMap { _ in
                 return self.useCase.checkOut()
                     .trackActivity(hudTracker)
                     .asDriverOnErrorJustComplete()
-            }
+            }.flatMap { checkOutSuccess }
 
         let list = input.bindView
             .flatMap {
