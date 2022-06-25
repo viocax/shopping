@@ -13,6 +13,11 @@ typealias Coordinator = ProductCoordinatorProcotol & ProductDetailCoordinatorPro
 
 class MockCoordinator: Coordinator  {
     
+    var injectShowAlert: Observable<Void> = .empty()
+    func showAlert() -> Observable<Void> {
+        return injectShowAlert
+    }
+    
     var injectShowDetailPage: ((ShopItemsViewModel) -> Observable<Void>)!
     func showDetailPage(_ model: ShopItemsViewModel) -> Observable<Void> {
         return injectShowDetailPage(model)
@@ -23,14 +28,14 @@ class MockCoordinator: Coordinator  {
         return injectShowChartView
     }
 
-    var injectOrderCheckingView: ((ShopItemsViewModel) -> Observable<Void>)!
-    func showOrderCheckingView(_ model: ShopItemsViewModel) -> Observable<Void> {
-        return injectOrderCheckingView(model)
+    var injectOrderCheckingView: (() -> Observable<Void>)!
+    func showOrderCheckingView() -> Observable<Void> {
+        return injectOrderCheckingView()
     }
 
-    var injectMoreOrderCheckingView: (([ShopItemsViewModel]) -> Observable<Void>)!
-    func showOrderView(models: [ShopItemsViewModel]) -> Observable<Void> {
-        return injectMoreOrderCheckingView(models)
+    var injectMoreOrderCheckingView: (() -> Observable<Void>)!
+    func showOrderView() -> Observable<Void> {
+        return injectMoreOrderCheckingView()
     }
 
     var injectDismiss: Observable<Void> = .empty()
@@ -45,6 +50,6 @@ class MockCoordinator: Coordinator  {
     
     var injectPopToRoot: Observable<Void> = .empty()
     func popToRoot() -> Observable<Void> {
-        return .empty()
+        return injectPopToRoot
     }
 }

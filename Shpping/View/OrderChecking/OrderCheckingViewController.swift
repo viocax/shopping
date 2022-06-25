@@ -21,8 +21,16 @@ class OrderCheckingViewController: UIViewController {
         let effect = UIBlurEffect(style: .extraLight)
         return UIVisualEffectView(effect: effect)
     }()
-
-
+    private let viewModel: OrderCheckingViewModel
+    init(viewModel: OrderCheckingViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -50,6 +58,7 @@ private extension OrderCheckingViewController {
         titleLabel.textAlignment = .center
         titleLabel.font = .systemFont(ofSize: 50, weight: .semibold)
         titleLabel.textColor = .black
+        titleLabel.text = "付款項目"
         view.addSubview(footerView)
         footerView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
@@ -80,7 +89,7 @@ private extension OrderCheckingViewController {
             make.height.equalTo(48)
             make.bottom.equalTo(view.snp.bottomMargin).inset(24)
         }
-        submitButton.setTitle("提交訂單", for: .normal)
+        submitButton.setTitle("結帳", for: .normal)
         submitButton.setTitleColor(.white, for: .normal)
         submitButton.backgroundColor = .black
         submitButton.layer.cornerRadius = 15
@@ -98,21 +107,41 @@ private extension OrderCheckingViewController {
         tableView.estimatedRowHeight = 150
         tableView.separatorStyle = .none
     }
-    // FIXME: 
     func bindView() {
-        typealias CellForRowAt = ((UITableView, Int, String) -> UITableViewCell)
+        typealias CellForRowAt = ((UITableView, Int, OrderCellDisplayModel) -> UITableViewCell)
         let cellforRowAt: CellForRowAt = { tableView, row, model in
             guard let cell = tableView.dequeueReusableCell(OrderCheckingCell.self, indexPath: .init(row: row, section: .zero)) else {
                 return .init()
             }
-            cell.config()
+            cell.config(model)
             return cell
         }
-        Driver.just((0...10).map(String.init))
+        let bindView = PublishRelay<Void>()
+        defer { bindView.accept(()) }
+        let clickCheckOut = submitButton.rx.tap.debug().asDriverOnErrorJustComplete()
+        let input = OrderCheckingViewModel
+            .Input(
+                bindView: bindView.asDriverOnErrorJustComplete(),
+                clickCheckOut: clickCheckOut.asDriver()
+            )
+        let output = viewModel.transform(input)
+        output.list
             .drive(tableView.rx.items)(cellforRowAt)
             .disposed(by: disposeBag)
-        titleLabel.text = "titleLabel"
-        descriptionLabel.text = "descriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabeldescriptionLabel"
-        priceLabel.text = "priceLabel$0"
+        output.configuration
+            .drive()
+            .disposed(by: disposeBag)
+        output.isLoading
+            .drive(view.rx.indicatorAnimator)
+            .disposed(by: disposeBag)
+        output.footer
+            .drive(footer)
+            .disposed(by: disposeBag)
+    }
+    var footer: Binder<OrderFooterViewModel> {
+        return Binder(self) { vc, model in
+            vc.descriptionLabel.text = model.content
+            vc.priceLabel.text = model.priceString
+        }
     }
 }

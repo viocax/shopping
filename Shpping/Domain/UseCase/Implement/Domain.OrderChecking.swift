@@ -50,7 +50,9 @@ extension Domain.OrderChecking: OrderCheckingUseCase {
             var price: String
         }
         return .create { [weak self] subscriber in
-            let currentListInChart = self?.repository.getShopItemOfChart() ?? []
+            let selectKeys = self?.repository.selectKeys ?? []
+            let currentListInChart = (self?.repository.getShopItemOfChart() ?? [])
+                .filter { selectKeys.contains($0.identifier) }
             let dictionary = Dictionary(
                 grouping: currentListInChart,
                 by: { $0.identifier }

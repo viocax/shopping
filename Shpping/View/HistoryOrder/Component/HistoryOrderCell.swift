@@ -50,7 +50,7 @@ private extension HistoryOrderCell {
             make.leading.trailing.equalTo(titleLabel)
             make.top.equalTo(titleLabel.snp.bottom).offset(8)
         }
-        descriptionLabel.numberOfLines = 0
+        descriptionLabel.numberOfLines = 5
         descriptionLabel.textColor = .black.withAlphaComponent(0.6)
         descriptionLabel.font = .systemFont(ofSize: 18, weight: .regular)
         

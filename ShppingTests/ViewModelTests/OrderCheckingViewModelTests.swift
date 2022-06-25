@@ -48,6 +48,8 @@ class OrderCheckingViewModelTests: XCTestCase {
                 clickCheckOut: triggerClickCheckOut.asDriverOnErrorJustComplete()
             )
         mockUseCase.injectCheckOut = .just(())
+        mockCoordinator.injectShowAlert = .just(())
+        mockCoordinator.injectPopToRoot = .just(())
         let output = viewModel.transform(input)
 
         let click = testScheduler.createColdObservable([

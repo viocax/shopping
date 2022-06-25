@@ -45,8 +45,9 @@ extension ProductDetailViewModel: ViewModelType {
 
         let gotoOrderView = input.purchase
             .withLatestFrom(displayModel)
+            .map(useCase.addToChart(_:))
             .flatMap { item in
-                return self.coordinator.showOrderCheckingView(item)
+                return self.coordinator.showOrderCheckingView()
                     .asDriverOnErrorJustComplete()
             }
 

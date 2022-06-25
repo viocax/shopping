@@ -11,7 +11,6 @@ import protocol Kingfisher.Resource
 extension Domain {
     class Chart {
         private let repository: RepositoryProtocol
-        private var currentSelectID: [String] = []
         init(repository: RepositoryProtocol = Repository.shared) {
             self.repository = repository
         }
@@ -27,46 +26,51 @@ extension Domain.Chart: ChartUseCase {
         var isSelected: Bool
     }
     func getCurrentChartItems() -> [ChartViewCellViewModel] {
-        let selectID = currentSelectID
+        let selectID = repository.selectKeys
         let dictionary = Dictionary(
-            grouping: repository.getShopItemOfChart(),
-            by: { $0.identifier }
+            grouping: repository.getShopItemOfChart().enumerated(),
+            by: { $0.element.identifier }
         )
+
         return dictionary
-            .reduce(.init(), { current, next -> [ChartViewCellViewModel] in
+            .reduce([], { current, next -> [(ChartViewCellViewModel, Int)] in
                 guard !next.value.isEmpty else {
                     return current
                 }
                 let count = next.value.count
-                let info = next.value[0]
+                let info = next.value[0].element
                 let price = "$ \(info.price) * \(count) = \(info.price * count)"
                 let isSelected = selectID.contains(next.key)
-                let newNext: [ChartViewCellViewModel] = [
-                    WrapShopInfo(
-                        id: info.identifier,
-                        image: info.image,
-                        title: info.title,
-                        price: price,
-                        isSelected: isSelected
+                let newNext: [(ChartViewCellViewModel, Int)] = [
+                    (
+                        WrapShopInfo(
+                            id: info.identifier,
+                            image: info.image,
+                            title: info.title,
+                            price: price,
+                            isSelected: isSelected
+                        ),
+                        next.value[0].offset
                     )
                 ]
                 return current + newNext
             })
+            .sorted(by: { $0.1 < $1.1 })
+            .map(\.0)
     }
     func canCheckOut() -> Bool {
-        return !currentSelectID.isEmpty
+        return !repository.selectKeys.isEmpty
     }
     func toggleItems(_ cell: ChartViewCellViewModel) {
         let isSelect = !cell.isSelected
+        let currentSelectID = repository.selectKeys
         if isSelect {
-            if !currentSelectID.contains(cell.id) {
-                currentSelectID.append(cell.id)
-            }
+            repository.selectKeys += [cell.id]
         } else {
             guard let index = currentSelectID.firstIndex(of: cell.id) else {
                 return
             }
-            currentSelectID.remove(at: index)
+            repository.selectKeys.remove(at: index)
         }
     }
 }
