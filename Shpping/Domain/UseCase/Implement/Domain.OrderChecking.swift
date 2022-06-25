@@ -37,9 +37,11 @@ extension Domain.OrderChecking: OrderCheckingUseCase {
     func checkOut() -> Observable<Void> {
         let checkoutToServer = Observable.just(repository) // replace to server event
         return checkoutToServer.map { repo -> Void in
-            let currentList = repo.getShopItemOfChart()
-            repo.saveToHistory(currentList)
-            return repo.removeAllChart()
+            let needToPurchaseList = repo.getShopItemOfChart()
+                .filter { repo.selectKeys.contains($0.identifier) }
+            repo.saveToHistory(needToPurchaseList)
+            repo.removeItemInChart(needToPurchaseList)
+            return repo.selectKeys = []
         }
         .delay(.milliseconds(1500), scheduler: MainScheduler.instance)
     }

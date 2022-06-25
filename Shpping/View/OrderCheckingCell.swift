@@ -59,7 +59,6 @@ private extension OrderCheckingCell {
 
 // MARK: Public
 extension OrderCheckingCell {
-    // FIXME: 
     func config(_ model: OrderCellDisplayModel) {
         titleLabel.text = model.title
         descriptionLabel.text = model.title
