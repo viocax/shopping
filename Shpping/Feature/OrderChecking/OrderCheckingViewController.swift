@@ -53,7 +53,6 @@ private extension OrderCheckingViewController {
             make.top.equalTo(view.snp.topMargin).inset(16)
             make.leading.equalToSuperview().inset(16)
             make.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(40)
         }
         titleLabel.textAlignment = .center
         titleLabel.font = .systemFont(ofSize: 50, weight: .semibold)
